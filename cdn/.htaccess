@@ -1,0 +1,20 @@
+<IfModule mod_rewrite.c>
+Options
+#RewriteCond %{HTTP_HOST} ^cdn.limononoto.com$ [OR]
+# cookieless domain for images and stuff
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^cdn\.limononoto\.com/ [NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ https://limononoto.com/$1 [R=301,L]
+RewriteRule "(^|/)\." - [F]
+#Options All
+</IfModule>
+<IfModule mod_headers.c>
+<FilesMatch “\.(ttf|ttc|otf|eot|woff|woff2|js|css|jpg|png|jpeg|gif|xml|csv|pdf|swf|svg|ico|mp4|ttf)$”>
+RequestHeader unset Cookie
+Header unset Set-Cookie
+Header unset ETag
+FileETag None
+</FilesMatch>
+</IfModule>
+# disable directory browsing

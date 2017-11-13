@@ -1,0 +1,32 @@
+# www.robotstxt.org/
+# http://code.google.com/web/controlcrawlindex/
+User-agent: *
+
+# Directories
+Disallow: /application/
+
+# Paths (clean URLs)
+Disallow: /index.php/
+ 
+# Files
+Disallow: /cron.php
+Disallow: /cron.sh
+Disallow: /error_log
+Disallow: /install.php
+Disallow: /LICENSE.html
+Disallow: /LICENSE.txt
+Disallow: /LICENSE_AFL.txt
+Disallow: /STATUS.txt
+Disallow: /get.php
+ 
+# Paths (no clean URLs)
+Disallow: /*.php$
+Disallow: /*?SID=
+Disallow: /*PHPSESSID
+Disallow: /*?___SID=U*
+
+Crawl-delay: 30
+
+Sitemap: https://limononoto.com/sitemap.xml
+
+Host: https://limononoto.com
