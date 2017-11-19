@@ -8,7 +8,7 @@ class Authentication extends MY_Controller {
 		$this->load->library('bower', array('CI' => $this));
 		$this->load->helper(array('form','cilm_limononoto','seo_helper','cookie'));
 		$this->load->library(array('General/Tb_form','General/Tb_dyn_listing_menu','General/Tb_dhd_css','General/Tb_dyn_medsos','Authentication/Auth_libraries','Authentication/auth_dyn_menu','General/Tb_dft_javascript','Password','Format','Facebook'));
-		$this->load->model(array('object_model','menu_model','user_model'));
+		$this->load->model(array('object_model','menu_model'));
 		$this->facebook->enable_debug(TRUE);
 		$this->css = $this->tb_dhd_css->build_css();
 		$this->menu_title = $this->auth_dyn_menu->build_menu_title();

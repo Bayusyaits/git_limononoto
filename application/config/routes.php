@@ -51,12 +51,14 @@
 $route['email'] = 'email';
 $route['default_controller'] = 'General';
 $route['load/work'] = 'General/load_work';
+$route['load/manage'] = 'Admin/load_manage';
 $route['load/blog'] = 'General/load_blog';
 $route['signup'] = 'Authentication';
 $route['login'] = 'Authentication';
 $route['login/two-factor'] = 'Authentication/Twofactor';
 $route['passwordreset'] = 'Authentication/Authentication/passwordreset';
 $route['dashboard'] = 'User';
+$route['admin/manage'] = 'Admin';
 $route['logout'] = 'General/logout';
 $route['contact/join'] = 'General/join';
 $route['auth'] = 'Authentication';
@@ -95,6 +97,7 @@ $route['api/user/(:num)']['DELETE']                = 'Rest_server/auth_token/use
 
 $route['api/users']['GET']                          = 'Rest_server/users/users';
 $route['api/users/format/(:any)']['GET']            = 'Rest_server/users/users/format/$1';
+$route['api/users/id/(:num)']['GET']                = 'Rest_server/users/users/id/$1';
 $route['api/users/(:num)']['GET']                   = 'Rest_server/users/users/id/$1';
 $route['api/users/(:num)/format/(:any)']['GET']     = 'Rest_server/users/users/id/$1/format/$2';
 
@@ -111,6 +114,10 @@ $route['api/active']['POST']                         = 'Rest_server/users/active
 $route['api/active/(:num)']['PUT']                   = 'Rest_server/users/active/id/$1';
 $route['api/active/(:num)']['DELETE']                = 'Rest_server/users/active/id/$1';
 
+$route['api/admin/manage']['POST']                    = 'Rest_server/admin/manage';
+$route['api/insert/user']['POST']                    = 'Rest_server/admin/insert';
+$route['api/update/user']['POST']          	   			= 'Rest_server/admin/update';
+$route['api/delete/user']['POST']     				= 'Rest_server/admin/user';
 
 //---------------------------------api buku---------------------------------------------------------
 $route['api/login']['GET']                             = 'Rest_server/Auth_token/login';

@@ -101,7 +101,7 @@ class Auth_token extends REST_data
     $link = 'dashboard';
     $ui = $this->user_model->check_levels_ui($levels_id);
     if($ui == 3 && isset($_twofactor)){
-	    $link = 'home';
+	    $link = 'admin/manage';
     }
     if ($get_salt == ERR_NONE) {
     	$this->session->set_userdata("twofactor", TWOFACTOR_ACCESS);

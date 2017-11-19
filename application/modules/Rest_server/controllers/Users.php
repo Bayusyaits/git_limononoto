@@ -32,8 +32,8 @@ class Users extends REST_data {
         parent::__construct();
 		$this->cektoken();
 		$this->load->library(array('auth_jwt'));
-		$this->load->helper(array('authorization','jwt'));
-		$this->load->model(array('auth_model' => 'auth','user_model' => 'user'));
+		$this->load->helper(array('authorization','jwt','cilm_limononoto'));
+		$this->load->model(array('auth_model','user_model'));
         // Configure limits on our controller methods
 		// Configure limits on our controller methods
         // Ensure you have created the 'limits' table and enabled 'limits' within application/config/rest.php
@@ -46,11 +46,11 @@ class Users extends REST_data {
     {
         // Users from a data store e.g. database
         
-        $users_active = $this->user->select_all_user_active();
+        $users_active = $this->user_model->select_all_user_active();
 	    //jika user menambahkan id maka akan di select berdasarkan id, jika tidak maka akan di select seluruhnya
         $id = $this->get('id');
 		foreach ($users_active as $key => $active_all) { // line 48
-		    $active_all[] = $users_active;
+		    $active_all = $users_active;
 		 }
         // If the id parameter doesn't exist return all the users
 
@@ -133,7 +133,7 @@ class Users extends REST_data {
     {
         // Users from a data store e.g. database
         
-        $users = $this->user->select_all_user();
+        $users = $this->user_model->select_all_user();
 	    //jika user menambahkan id maka akan di select berdasarkan id, jika tidak maka akan di select seluruhnya
         $id = $this->get('id');
 		
@@ -174,13 +174,13 @@ class Users extends REST_data {
         // Get the user from the array, using the id as key for retrieval.
         // Usually a model is to be used for this.
 
-        $user = NULL;
+        $user = $users['id'];
 
         if (!empty($users))
         {
             foreach ($users as $key => $value)
             {
-                if (isset($value['id']) && $value['id'] === $id)
+                if (isset($users['id']) && $users['id'] === $id)
                 {
                     $user = $value;
                 }
@@ -230,174 +230,81 @@ class Users extends REST_data {
 	        'activation'=>0,
             'message' => 'Deleted the resource'
         ];
-		$delete = $this->user->delete_user($id);
+		$delete = $this->user_model->delete_user($id);
 	    if ($delete) {
         $this->set_response($message, REST_Controller::HTTP_NO_CONTENT); 
         }// NO_CONTENT (204) being the HTTP response code
     }
 	 public function is_member() {
-        if ($this->auth->is_member('deneme',9))
+        if ($this->user_model->is_member('deneme',9))
             echo 'uye';
     }
     public function is_admin() {
-        if ($this->auth->is_member('Admin'))
+        if ($this->user_model->is_member('Admin'))
             echo 'adminovic';
     }
     function get_user_groups(){
-        //print_r( $this->auth->get_user_groups());
-        foreach($this->auth->get_user_groups() as $a){
+        //print_r( $this->user_model->get_user_groups());
+        foreach($this->user_model->get_user_groups() as $a){
             echo $a->id . " " . $a->name . "<br>";
         }
     }
     public function get_group_name() {
-        echo $this->auth->get_group_name(1);
+        echo $this->user_model->get_group_name(1);
     }
     public function get_group_id() {
-        echo $this->auth->get_group_id("Admin");
+        echo $this->user_model->get_group_id("Admin");
     }
     public function list_users() {
         echo '<pre>';
-        print_r($this->auth->list_users());
+        print_r($this->user_model->list_users());
         echo '</pre>';
     }
     public function list_groups() {
         echo '<pre>';
-        print_r($this->auth->list_groups());
+        print_r($this->user_model->list_groups());
         echo '</pre>';
     }
     public function check_email() {
-        if ($this->auth->check_email("aa@a.com"))
+        if ($this->user_model->check_email("aa@a.com"))
             echo 'uygun ';
         else
             echo 'alindi ';
-        $this->auth->print_errors();
+        $this->user_model->print_errors();
     }
     public function get_user() {
-        print_r($this->auth->get_user());
+        print_r($this->user_model->get_user());
     }
     function create_user() {
-        $a = $this->auth->create_user("admin@admin.com", "12345", "Admin");
+        $a = $this->user_model->create_user("admin@admin.com", "12345", "Admin");
         if ($a)
             echo "tmm   ";
         else
             echo "hyr  ";
-        print_r($this->auth->get_user($a));
-        $this->auth->print_errors();
+        print_r($this->user_model->get_user($a));
+        $this->user_model->print_errors();
     }
     public function is_banned() {
-        print_r($this->auth->is_banned(6));
+        print_r($this->user_model->is_banned(6));
     }
     function ban_user() {
-        $a = $this->auth->ban_user(6);
+        $a = $this->user_model->ban_user(6);
         print_r($a);
     }
     function delete_user() {
-        $a = $this->auth->delete_user(7);
+        $a = $this->user_model->delete_user(7);
         print_r($a);
     }
     function unban_user() {
-        $a = $this->auth->unban_user(6);
+        $a = $this->user_model->unban_user(6);
         print_r($a);
     }
     function update_user() {
-        $a = $this->auth->update_user(6, "a@a.com", "12345", "tested");
+        $a = $this->user_model->update_user(6, "a@a.com", "12345", "tested");
         print_r($a);
     }
     function update_activity() {
-        $a = $this->auth->update_activity();
+        $a = $this->user_model->update_activity();
         print_r($a);
     }
-    function update_login_attempt() {
-        $a = $this->auth->update_login_attempts("a@a.com");
-        print_r($a);
-    }
-    function create_group() {
-        $a = $this->auth->create_group("deneme");
-    }
-    function delete_group() {
-        $a = $this->auth->delete_group("deneme");
-    }
-    function update_group() {
-        $a = $this->auth->update_group("deneme", "zxxx");
-    }
-    function add_member() {
-        $a = $this->auth->add_member(8, "deneme");
-    }
-    function fire_member() {
-        $a = $this->auth->fire_member(8, "deneme");
-    }
-    function create_perm() {
-        $a = $this->auth->create_perm("deneme","def");
-    }
-    function update_perm() {
-        $a = $this->auth->update_perm("deneme","deneme","xxx");
-    }
-    function delete_perm() {
-        $a = $this->auth->update_perm("deneme","deneme","xxx");
-    }
-    function allow_user() {
-        $a = $this->auth->allow_user(9,"deneme");
-    }
-    function deny_user() {
-        $a = $this->auth->deny_user(9,"deneme");
-    }
-    function allow_group() {
-        $a = $this->auth->allow_group("deneme","deneme");
-    }
-    function deny_group() {
-        $a = $this->auth->deny_group("deneme","deneme");
-    }
-    function list_perms() {
-        $a = $this->auth->list_perms();
-        print_r($a);
-    }
-    function get_perm_id() {
-        $a = $this->auth->get_perm_id("deneme");
-        print_r($a);
-    }
-    function send_pm() {
-        $a = $this->auth->send_pm(1,8,'s',"w");
-        $this->auth->print_errors();
-    }
-    function list_pms(){
-        print_r( $this->auth->list_pms() );
-    }
-    function get_pm(){
-        print_r( $this->auth->get_pm(39,false));
-    }
-    function delete_pm(){
-        $this->auth->delete_pm(41);
-    }
-    function count_unread_pms(){
-        echo $this->auth->count_unread_pms(8);
-    }
-    function error(){
-        $this->auth->error("asd");
-        $this->auth->error("xasd");
-        $this->auth->keep_errors();
-        $this->auth->print_errors();
-    }
-    function keep_errors(){
-        $this->auth->print_errors();
-        //$this->auth->keep_errors();
-    }
-    function set_user_var(){
-        $this->auth->set_user_var("emre","akasy");
-    }
-    function unset_user_var(){
-        $this->auth->unset_user_var("emre");
-    }
-    function get_user_var(){
-        echo $this->auth->get_user_var("emre");
-    }
-    function set_system_var(){
-        $this->auth->set_system_var("emre","akay");
-    }
-    function unset_system_var(){
-        $this->auth->unset_system_var("emre");
-    }
-    function get_system_var(){
-        echo $this->auth->get_system_var("emre");
-    }
-
 }

@@ -22,7 +22,7 @@ window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){va
 	<?php 
 	echo $this->css; 
 	echo meta_apps();
-	echo link_icon();
+	echo link_icon(); ?>
 	<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/limononoto.com\/","name":"Limononoto","alternateName":"limononoto design","potentialAction":{"@type":"SearchAction","target":"https:\/\/limononoto.com\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
 	<!-- jQuery plugin leanModal under MIT License http://leanmodal.finelysliced.com.au/ -->
     <script>

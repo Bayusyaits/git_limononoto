@@ -112,6 +112,8 @@ $lang['create_user_validation_password_confirm_label'] = 'Password Confirmation'
 
 $lang['username_placeholder']                       = 'Username';
 $lang['birthday_placeholder']                       = 'Birthday';
+$lang['id_placeholder']                       = 'Id user';
+$lang['level_placeholder']                       = 'Level user';
 $lang['firstname_placeholder']                       = 'First name';
 $lang['lastname_placeholder']                       = 'Last name';
 $lang['company_placeholder']                     = 'Company name';
@@ -125,6 +127,9 @@ $lang['attach_cover_letter']           			 = 'Attach_cover_letter';
 $lang['verification_code_placeholder']            = 'Verification code';
 $lang['message_placeholder']            		= 'Message';
 $lang['create_user_submit_btn']                        = 'Create user';
+$lang['insert_button']                        = 'Insert';
+$lang['update_button']                        = 'Update';
+$lang['delete_button']                        = 'Delete';
 $lang['contact_submit_btn']                        = 'Send Message';
 $lang['contact_subheading']                        = 'We are happy to hear from you. Fill out the form below and a limononoto representative will contact you as soon as possible.';
 
@@ -296,6 +301,7 @@ $lang['err_lastname_required'] = 'Lastname is required';
 $lang['err_email_required'] = 'Email is required';
 $lang['err_cpassword_required'] = 'Confirm password is required';
 $lang['err_password_required'] = 'Password is required';
+$lang['err_password_notmatch'] = 'Password is not match';
 $lang['err_subject_required'] = 'Subject is required';
 $lang['err_level_required'] = 'Level is required';
 $lang['err_country_required'] = 'Country is required';

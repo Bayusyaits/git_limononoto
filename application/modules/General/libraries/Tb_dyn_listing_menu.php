@@ -200,7 +200,7 @@ class Tb_dyn_listing_menu {
 				        'height'=> $height,
 				        'rel'   => 'lightbox'
 				);
-			$html_out .= "\t".'<div class="lm-wrapper-media lm-image-size"><div class="b-lazy lm-media-image" data-src="'.$file.'"></div></div>
+			$html_out .= "\t".'<div class="lm-wrapper-media lm-image-size"><div class="b-lazy lm-media-image" data-src="'.$file.'"></div><div class="lm-scrim"></div></div>
 			<div class="lm-wrapper-content"><div class="lm-text">
 			<div class="lm-scroll-to-inner lm-section-container">
 			<div class="lm-text-block">

@@ -85,6 +85,8 @@ defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automat
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
 define('SHOW_ACTIVE', 525);
+define('SHOW_ADMIN', 555);
+define('USER_ACTIVE', 5);
 
 define('ERR_NONE', 10);
 define('ERR_INVALID_USERNAME', 11);

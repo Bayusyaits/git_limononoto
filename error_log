@@ -1,252 +1,90 @@
-[02-Nov-2017 05:58:21 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:58:23 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:58:23 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:58:24 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:58:26 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:58:31 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:58:35 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:58:35 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:58:35 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:58:41 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:58:43 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:58:46 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:58:46 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:58:47 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:58:47 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:58:47 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:58:48 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:58:57 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:58:58 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:59:03 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:59:05 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:59:05 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:59:05 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:59:06 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:59:06 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:59:06 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:59:06 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:59:07 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:59:07 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:59:07 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:59:18 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:59:22 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:59:25 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:59:27 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:59:27 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 05:59:35 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 06:10:41 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 06:10:42 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 06:17:39 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 06:26:11 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 06:26:20 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 06:49:17 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 06:52:20 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 06:52:29 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 06:53:37 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[02-Nov-2017 13:06:38 Asia/Bangkok] PHP Fatal error:  Cannot assign by reference to overloaded object in /home/limb8391/public_html/application/models/Menu_model.php on line 8
-[02-Nov-2017 13:06:39 Asia/Bangkok] PHP Fatal error:  Cannot assign by reference to overloaded object in /home/limb8391/public_html/application/models/Menu_model.php on line 8
-[02-Nov-2017 13:06:39 Asia/Bangkok] PHP Fatal error:  Cannot assign by reference to overloaded object in /home/limb8391/public_html/application/models/Menu_model.php on line 8
-[02-Nov-2017 13:07:11 Asia/Bangkok] PHP Fatal error:  Cannot assign by reference to overloaded object in /home/limb8391/public_html/application/models/Menu_model.php on line 8
-[02-Nov-2017 13:43:05 Asia/Bangkok] PHP Fatal error:  Using $this when not in object context in /home/limb8391/public_html/application/helpers/cilm_limononoto_helper.php on line 335
-[02-Nov-2017 13:43:27 Asia/Bangkok] PHP Fatal error:  Using $this when not in object context in /home/limb8391/public_html/application/helpers/cilm_limononoto_helper.php on line 336
-[02-Nov-2017 13:45:28 Asia/Bangkok] PHP Fatal error:  Using $this when not in object context in /home/limb8391/public_html/application/helpers/cilm_limononoto_helper.php on line 336
-[02-Nov-2017 13:45:44 Asia/Bangkok] PHP Fatal error:  Using $this when not in object context in /home/limb8391/public_html/application/helpers/cilm_limononoto_helper.php on line 336
-[02-Nov-2017 13:46:03 Asia/Bangkok] PHP Fatal error:  Using $this when not in object context in /home/limb8391/public_html/application/helpers/cilm_limononoto_helper.php on line 336
-[02-Nov-2017 13:47:08 Asia/Bangkok] PHP Fatal error:  Using $this when not in object context in /home/limb8391/public_html/application/helpers/cilm_limononoto_helper.php on line 336
-[02-Nov-2017 13:47:20 Asia/Bangkok] PHP Fatal error:  Using $this when not in object context in /home/limb8391/public_html/application/helpers/cilm_limononoto_helper.php on line 336
-[02-Nov-2017 18:18:31 Asia/Bangkok] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/limb8391/public_html/application/controllers/composer/Content.php on line 54
-[09-Nov-2017 21:53:07 Asia/Bangkok] PHP Fatal error:  require_once(): Failed opening required '/home/limb8391/public_html/application/libraries/JWT.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/limb8391/public_html/application/helpers/authorization_helper.php on line 3
-[09-Nov-2017 21:53:24 Asia/Bangkok] PHP Fatal error:  require_once(): Failed opening required '/home/limb8391/public_html/application/libraries/JWT.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/limb8391/public_html/application/helpers/authorization_helper.php on line 3
-[09-Nov-2017 21:54:17 Asia/Bangkok] PHP Fatal error:  require_once(): Failed opening required '/home/limb8391/public_html/application/modules/Rest_server/libraries/JWT.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/limb8391/public_html/application/helpers/authorization_helper.php on line 3
-[09-Nov-2017 22:12:41 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_auth() on null in /home/limb8391/public_html/application/modules/Authentication/models/Auth_model.php on line 304
-[09-Nov-2017 22:25:38 Asia/Bangkok] PHP Fatal error:  Call to undefined method Tb_dyn_menu::get_childs() in /home/limb8391/public_html/application/modules/Authentication/libraries/Tb_dyn_menu.php on line 177
-[09-Nov-2017 22:26:22 Asia/Bangkok] PHP Fatal error:  Call to undefined method Tb_dyn_menu::build_navbar() in /home/limb8391/public_html/application/modules/General/controllers/General.php on line 14
-[09-Nov-2017 22:26:54 Asia/Bangkok] PHP Fatal error:  Call to undefined method Tb_dyn_menu::build_navbar() in /home/limb8391/public_html/application/modules/General/controllers/General.php on line 14
-[09-Nov-2017 22:48:07 Asia/Bangkok] PHP Fatal error:  Call to a member function get_object_active() on null in /home/limb8391/public_html/application/models/Object_model.php on line 147
-[09-Nov-2017 22:49:38 Asia/Bangkok] PHP Fatal error:  Call to a member function get_object_data() on null in /home/limb8391/public_html/application/modules/General/libraries/Tb_dhd_css.php on line 53
-[09-Nov-2017 22:49:46 Asia/Bangkok] PHP Fatal error:  Call to a member function get_object_active() on null in /home/limb8391/public_html/application/models/Object_model.php on line 147
-[09-Nov-2017 22:49:51 Asia/Bangkok] PHP Fatal error:  Call to a member function get_object_data() on null in /home/limb8391/public_html/application/modules/General/libraries/Tb_dhd_css.php on line 53
-[09-Nov-2017 22:54:32 Asia/Bangkok] PHP Fatal error:  Call to a member function check_navmenu_user() on null in /home/limb8391/public_html/application/modules/User/controllers/User.php on line 17
-[09-Nov-2017 22:56:09 Asia/Bangkok] PHP Fatal error:  Call to undefined method Auth_model::get_levels_id() in /home/limb8391/public_html/application/modules/User/libraries/User_libraries.php on line 205
-[09-Nov-2017 22:56:34 Asia/Bangkok] PHP Fatal error:  Call to a member function get_levels_id() on null in /home/limb8391/public_html/application/modules/General/models/Menu_model.php on line 148
-[09-Nov-2017 22:59:11 Asia/Bangkok] PHP Fatal error:  Call to a member function get_levels_id() on null in /home/limb8391/public_html/application/modules/General/models/Menu_model.php on line 148
-[09-Nov-2017 22:59:25 Asia/Bangkok] PHP Fatal error:  Call to a member function get_levels_id() on null in /home/limb8391/public_html/application/modules/General/models/Menu_model.php on line 148
-[09-Nov-2017 23:00:45 Asia/Bangkok] PHP Fatal error:  Call to a member function get_levels_id() on null in /home/limb8391/public_html/application/modules/General/models/Menu_model.php on line 148
-[09-Nov-2017 23:00:54 Asia/Bangkok] PHP Fatal error:  Call to a member function get_levels_id() on null in /home/limb8391/public_html/application/modules/General/models/Menu_model.php on line 148
-[09-Nov-2017 23:01:53 Asia/Bangkok] PHP Fatal error:  Cannot redeclare User_model::check_levels_id() in /home/limb8391/public_html/application/modules/User/models/User_model.php on line 59
-[09-Nov-2017 23:02:25 Asia/Bangkok] PHP Fatal error:  Cannot redeclare User_model::check_levels_id() in /home/limb8391/public_html/application/modules/User/models/User_model.php on line 59
-[09-Nov-2017 23:03:13 Asia/Bangkok] PHP Fatal error:  Cannot redeclare User_model::check_levels_id() in /home/limb8391/public_html/application/modules/User/models/User_model.php on line 59
-[09-Nov-2017 23:03:25 Asia/Bangkok] PHP Fatal error:  Cannot redeclare User_model::check_levels_id() in /home/limb8391/public_html/application/modules/User/models/User_model.php on line 59
-[09-Nov-2017 23:03:50 Asia/Bangkok] PHP Fatal error:  Cannot redeclare User_model::check_levels_id() in /home/limb8391/public_html/application/modules/User/models/User_model.php on line 59
-[09-Nov-2017 23:04:43 Asia/Bangkok] PHP Fatal error:  Cannot redeclare User_model::check_levels_id() in /home/limb8391/public_html/application/modules/General/models/User_model.php on line 59
-[09-Nov-2017 23:04:57 Asia/Bangkok] PHP Fatal error:  Cannot redeclare User_model::check_levels_id() in /home/limb8391/public_html/application/modules/General/models/User_model.php on line 59
-[09-Nov-2017 23:05:29 Asia/Bangkok] PHP Fatal error:  Cannot redeclare User_model::check_levels_id() in /home/limb8391/public_html/application/modules/General/models/User_model.php on line 59
-[09-Nov-2017 23:05:48 Asia/Bangkok] PHP Fatal error:  Cannot redeclare User_model::check_levels_id() in /home/limb8391/public_html/application/modules/General/models/User_model.php on line 59
-[09-Nov-2017 23:05:56 Asia/Bangkok] PHP Fatal error:  Cannot redeclare User_model::check_levels_id() in /home/limb8391/public_html/application/modules/General/models/User_model.php on line 59
-[09-Nov-2017 23:06:23 Asia/Bangkok] PHP Fatal error:  Call to undefined method User_model::plain_levels_id() in /home/limb8391/public_html/application/modules/User/models/User_model.php on line 62
-[09-Nov-2017 23:06:33 Asia/Bangkok] PHP Fatal error:  Call to undefined method User_model::plain_levels_id() in /home/limb8391/public_html/application/modules/User/models/User_model.php on line 62
-[09-Nov-2017 23:06:44 Asia/Bangkok] PHP Fatal error:  Call to undefined method User_model::get_levels_id() in /home/limb8391/public_html/application/modules/User/libraries/User_libraries.php on line 205
-[09-Nov-2017 23:07:27 Asia/Bangkok] PHP Fatal error:  Call to a member function get_levels_id() on null in /home/limb8391/public_html/application/modules/General/models/Menu_model.php on line 148
-[09-Nov-2017 23:07:59 Asia/Bangkok] PHP Fatal error:  Call to undefined method User_model::get_levels_id() in /home/limb8391/public_html/application/modules/General/models/Menu_model.php on line 148
-[09-Nov-2017 23:15:47 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_auth() on null in /home/limb8391/public_html/application/modules/Rest_server/models/User_model.php on line 122
-[09-Nov-2017 23:16:56 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_auth() on null in /home/limb8391/public_html/application/models/User_model.php on line 122
-[09-Nov-2017 23:17:23 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_auth() on null in /home/limb8391/public_html/application/models/User_model.php on line 122
-[09-Nov-2017 23:18:39 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_auth() on null in /home/limb8391/public_html/application/models/User_model.php on line 122
-[09-Nov-2017 23:19:27 Asia/Bangkok] PHP Fatal error:  Cannot redeclare User_model::check_levels_id() in /home/limb8391/public_html/application/modules/Rest_server/models/User_model.php on line 59
-[09-Nov-2017 23:20:35 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_auth() on null in /home/limb8391/public_html/application/models/User_model.php on line 122
-[09-Nov-2017 23:20:45 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_auth() on null in /home/limb8391/public_html/application/models/User_model.php on line 122
-[09-Nov-2017 23:21:15 Asia/Bangkok] PHP Fatal error:  Call to undefined method User_model::get_levels_id() in /home/limb8391/public_html/application/modules/General/models/Menu_model.php on line 148
-[09-Nov-2017 23:26:07 Asia/Bangkok] PHP Fatal error:  Call to a member function get_user_name() on null in /home/limb8391/public_html/application/modules/User/controllers/User.php on line 23
-[09-Nov-2017 23:41:02 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_signup() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Signup.php on line 33
-[09-Nov-2017 23:41:18 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_signup() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Signup.php on line 33
-[09-Nov-2017 23:41:20 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_signup() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Signup.php on line 33
-[09-Nov-2017 23:41:21 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_signup() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Signup.php on line 33
-[09-Nov-2017 23:41:46 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_auth() on null in /home/limb8391/public_html/application/models/User_model.php on line 122
-[10-Nov-2017 01:30:32 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_signup() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Signup.php on line 33
-[10-Nov-2017 01:30:42 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_signup() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Signup.php on line 33
-[10-Nov-2017 01:31:02 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_signup() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Signup.php on line 33
-[10-Nov-2017 01:32:12 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_signup() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Signup.php on line 33
-[10-Nov-2017 06:15:22 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
-[10-Nov-2017 16:40:29 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[10-Nov-2017 17:18:43 Asia/Bangkok] PHP Parse error:  syntax error, unexpected ')' in /home/limb8391/public_html/application/modules/General/libraries/Tb_form.php on line 933
-[10-Nov-2017 17:20:55 Asia/Bangkok] PHP Parse error:  syntax error, unexpected ';' in /home/limb8391/public_html/application/modules/General/models/Object_model.php on line 131
-[10-Nov-2017 17:33:36 Asia/Bangkok] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/limb8391/public_html/application/modules/General/models/Object_model.php on line 131
-[10-Nov-2017 19:48:55 Asia/Bangkok] PHP Fatal error:  Call to undefined method User_dyn_menu::build_navbar() in /home/limb8391/public_html/application/modules/User/controllers/User.php on line 16
-[10-Nov-2017 20:21:29 Asia/Bangkok] PHP Fatal error:  Call to undefined method User_dyn_menu::build_navbar_user() in /home/limb8391/public_html/application/modules/User/controllers/User.php on line 16
-[10-Nov-2017 20:23:07 Asia/Bangkok] PHP Parse error:  syntax error, unexpected ')' in /home/limb8391/public_html/application/modules/User/libraries/User_dyn_menu.php on line 62
-[10-Nov-2017 20:23:25 Asia/Bangkok] PHP Fatal error:  Call to undefined method User_dyn_menu::build_navmenu_nav() in /home/limb8391/public_html/application/modules/User/libraries/User_dyn_menu.php on line 105
-[10-Nov-2017 20:24:33 Asia/Bangkok] PHP Fatal error:  Call to undefined method User_dyn_menu::build_getintouch() in /home/limb8391/public_html/application/modules/User/libraries/User_dyn_menu.php on line 194
-[10-Nov-2017 20:26:23 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/application/modules/General/models/Object_model.php on line 29
-[10-Nov-2017 21:17:23 Asia/Bangkok] PHP Parse error:  syntax error, unexpected ')' in /home/limb8391/public_html/application/modules/General/libraries/Tb_dyn_menu.php on line 413
-[10-Nov-2017 21:17:45 Asia/Bangkok] PHP Parse error:  syntax error, unexpected ')' in /home/limb8391/public_html/application/modules/General/libraries/Tb_dyn_menu.php on line 525
-[10-Nov-2017 21:20:03 Asia/Bangkok] PHP Parse error:  syntax error, unexpected ')' in /home/limb8391/public_html/application/modules/General/libraries/Tb_dyn_menu.php on line 525
-[10-Nov-2017 22:14:24 Asia/Bangkok] PHP Parse error:  syntax error, unexpected ')' in /home/limb8391/public_html/application/modules/Authentication/libraries/Auth_dyn_menu.php on line 105
-[11-Nov-2017 04:45:44 Asia/Bangkok] PHP Fatal error:  Cannot use object of type stdClass as array in /home/limb8391/public_html/application/modules/User/models/User_model.php on line 31
-[11-Nov-2017 04:53:01 Asia/Bangkok] PHP Parse error:  syntax error, unexpected ''hai'' (T_CONSTANT_ENCAPSED_STRING) in /home/limb8391/public_html/application/modules/User/models/User_model.php on line 38
-[11-Nov-2017 04:53:32 Asia/Bangkok] PHP Parse error:  syntax error, unexpected ''hai'' (T_CONSTANT_ENCAPSED_STRING) in /home/limb8391/public_html/application/modules/User/models/User_model.php on line 38
-[11-Nov-2017 05:00:02 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 05:07:05 Asia/Bangkok] PHP Fatal error:  Call to a member function get_table_levels_user() on null in /home/limb8391/public_html/application/modules/User/libraries/User_dyn_menu.php on line 143
-[11-Nov-2017 05:07:38 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 05:08:01 Asia/Bangkok] PHP Fatal error:  Call to undefined method User_libraries::check_navmenu_user() in /home/limb8391/public_html/application/modules/User/controllers/User.php on line 21
-[11-Nov-2017 05:08:46 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 05:19:16 Asia/Bangkok] PHP Parse error:  syntax error, unexpected end of file in /home/limb8391/public_html/application/modules/User/models/User_model.php on line 22
-[11-Nov-2017 05:22:39 Asia/Bangkok] PHP Parse error:  syntax error, unexpected end of file in /home/limb8391/public_html/application/modules/User/models/User_model.php on line 22
-[11-Nov-2017 05:36:46 Asia/Bangkok] PHP Parse error:  syntax error, unexpected end of file in /home/limb8391/public_html/application/modules/User/models/User_model.php on line 22
-[11-Nov-2017 05:42:40 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 05:43:13 Asia/Bangkok] PHP Fatal error:  Call to undefined method User_model::get_table_levels_user() in /home/limb8391/public_html/application/modules/User/libraries/User_dyn_menu.php on line 143
-[11-Nov-2017 05:43:20 Asia/Bangkok] PHP Fatal error:  Call to undefined method User_model::get_table_levels_user() in /home/limb8391/public_html/application/modules/User/libraries/User_dyn_menu.php on line 143
-[11-Nov-2017 05:43:55 Asia/Bangkok] PHP Fatal error:  Call to undefined method User_model::get_table_levels_user() in /home/limb8391/public_html/application/modules/User/libraries/User_dyn_menu.php on line 143
-[11-Nov-2017 05:44:02 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 05:44:13 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 05:44:39 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 05:45:02 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 05:45:57 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 05:46:08 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 05:46:18 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 05:46:28 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 05:46:32 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 05:47:30 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 05:47:46 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 05:49:52 Asia/Bangkok] PHP Fatal error:  Call to undefined method User_model::get_table_levels_user() in /home/limb8391/public_html/application/modules/User/libraries/User_dyn_menu.php on line 478
-[11-Nov-2017 05:51:20 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 05:51:56 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 05:52:27 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 05:56:13 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 05:56:19 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 05:59:26 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 05:59:34 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 06:00:00 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 06:01:51 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 06:05:50 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 06:06:25 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 06:06:38 Asia/Bangkok] PHP Parse error:  syntax error, unexpected '}' in /home/limb8391/public_html/application/modules/User/libraries/User_dyn_menu.php on line 159
-[11-Nov-2017 06:06:48 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 06:06:57 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 06:07:16 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 06:07:30 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 06:07:51 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 06:08:04 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 06:08:24 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 06:09:23 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 06:09:31 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 06:11:52 Asia/Bangkok] PHP Fatal error:  Call to undefined method User_dyn_menu::get_childs() in /home/limb8391/public_html/application/modules/User/libraries/User_dyn_menu.php on line 275
-[11-Nov-2017 06:12:40 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 06:13:19 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 06:13:27 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 06:13:38 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 06:13:46 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 06:19:50 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 06:21:24 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 06:22:15 Asia/Bangkok] PHP Fatal error:  Call to undefined method User_dyn_menu::build_navbar() in /home/limb8391/public_html/application/modules/User/controllers/User.php on line 16
-[11-Nov-2017 06:22:22 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[11-Nov-2017 06:23:53 Asia/Bangkok] PHP Parse error:  syntax error, unexpected end of file in /home/limb8391/public_html/application/modules/User/libraries/User_dyn_menu.php on line 307
-[11-Nov-2017 06:28:00 Asia/Bangkok] PHP Fatal error:  Call to undefined method User_dyn_menu::build_menu_title_user() in /home/limb8391/public_html/application/modules/User/controllers/User.php on line 21
-[11-Nov-2017 06:28:09 Asia/Bangkok] PHP Parse error:  syntax error, unexpected end of file, expecting variable (T_VARIABLE) or '$' in /home/limb8391/public_html/application/modules/User/libraries/User_dyn_menu.php on line 235
-[11-Nov-2017 08:10:59 Asia/Bangkok] PHP Parse error:  syntax error, unexpected end of file in /home/limb8391/public_html/application/modules/General/models/Menu_model.php on line 347
-[11-Nov-2017 08:30:21 Asia/Bangkok] PHP Fatal error:  Call to undefined method Menu_model::get_childs_content_data() in /home/limb8391/public_html/application/modules/General/libraries/Tb_dyn_listing_menu.php on line 312
-[11-Nov-2017 08:30:55 Asia/Bangkok] PHP Fatal error:  Call to undefined method Menu_model::get_childs_content_data() in /home/limb8391/public_html/application/modules/General/libraries/Tb_dyn_listing_menu.php on line 312
-[11-Nov-2017 08:32:07 Asia/Bangkok] PHP Fatal error:  Call to undefined method Menu_model::get_childs_content_data() in /home/limb8391/public_html/application/modules/General/libraries/Tb_dyn_listing_menu.php on line 312
-[11-Nov-2017 08:32:35 Asia/Bangkok] PHP Fatal error:  Call to undefined method Menu_model::get_childs_content_data() in /home/limb8391/public_html/application/modules/General/libraries/Tb_dyn_listing_menu.php on line 312
-[11-Nov-2017 08:38:32 Asia/Bangkok] PHP Fatal error:  Call to undefined method Menu_model::get_content_opengraph() in /home/limb8391/public_html/application/modules/General/libraries/Tb_dyn_menu.php on line 535
-[11-Nov-2017 08:38:37 Asia/Bangkok] PHP Fatal error:  Call to undefined method Menu_model::get_content_opengraph() in /home/limb8391/public_html/application/modules/General/libraries/Tb_dyn_menu.php on line 535
-[11-Nov-2017 08:53:32 Asia/Bangkok] PHP Parse error:  syntax error, unexpected '"is_parent"' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /home/limb8391/public_html/application/modules/General/models/Content_model.php on line 90
-[11-Nov-2017 11:40:18 Asia/Bangkok] PHP Parse error:  syntax error, unexpected ';' in /home/limb8391/public_html/application/modules/General/models/Menu_model.php on line 164
-[11-Nov-2017 13:03:44 Asia/Bangkok] PHP Warning:  Unterminated comment starting line 49 in /home/limb8391/public_html/application/modules/Authentication/controllers/Authentication.php on line 49
-[11-Nov-2017 13:03:44 Asia/Bangkok] PHP Parse error:  syntax error, unexpected 'nomor' (T_STRING), expecting function (T_FUNCTION) in /home/limb8391/public_html/application/modules/Authentication/controllers/Authentication.php on line 58
-[11-Nov-2017 13:09:28 Asia/Bangkok] PHP Fatal error:  Call to a member function select_user_id() on null in /home/limb8391/public_html/application/modules/Rest_server/controllers/Auth_token.php on line 52
-[11-Nov-2017 19:07:27 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_auth() on null in /home/limb8391/public_html/application/models/User_model.php on line 146
-[11-Nov-2017 19:07:37 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_auth() on null in /home/limb8391/public_html/application/models/User_model.php on line 146
-[12-Nov-2017 13:07:07 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/application/modules/General/models/Object_model.php on line 29
-[12-Nov-2017 13:07:40 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/application/modules/General/models/Object_model.php on line 29
-[12-Nov-2017 13:07:52 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/application/modules/General/models/Object_model.php on line 29
-[12-Nov-2017 13:08:18 Asia/Bangkok] PHP Fatal error:  Call to undefined method Menu_model::get_content_opengraph() in /home/limb8391/public_html/application/modules/User/views/rest_server.php on line 44
-[12-Nov-2017 13:08:47 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/application/modules/General/models/Object_model.php on line 29
-[12-Nov-2017 13:09:00 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/application/modules/General/models/Object_model.php on line 29
-[12-Nov-2017 13:09:47 Asia/Bangkok] PHP Fatal error:  Call to undefined method Menu_model::get_opengraph_property() in /home/limb8391/public_html/application/modules/User/views/rest_server.php on line 44
-[12-Nov-2017 13:10:26 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[12-Nov-2017 13:56:36 Asia/Bangkok] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/limb8391/public_html/application/modules/General/views/include/header.php on line 29
-[12-Nov-2017 22:06:55 Asia/Bangkok] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/limb8391/public_html/application/modules/General/libraries/Tb_dyn_listing_menu.php on line 533
-[12-Nov-2017 22:07:04 Asia/Bangkok] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/limb8391/public_html/application/modules/General/libraries/Tb_dyn_listing_menu.php on line 533
-[13-Nov-2017 09:41:17 Asia/Bangkok] PHP Parse error:  syntax error, unexpected ';' in /home/limb8391/public_html/application/modules/Admin/controllers/Admin.php on line 12
-[13-Nov-2017 10:00:36 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[13-Nov-2017 10:16:05 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[13-Nov-2017 10:36:21 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[13-Nov-2017 11:14:29 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[13-Nov-2017 12:04:38 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[13-Nov-2017 12:18:47 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[13-Nov-2017 12:19:12 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[13-Nov-2017 12:19:17 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[13-Nov-2017 12:20:08 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
-[13-Nov-2017 12:42:16 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_twofactor() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Twofactor.php on line 100
-[13-Nov-2017 12:42:46 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_twofactor() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Twofactor.php on line 100
-[13-Nov-2017 12:42:51 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_twofactor() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Twofactor.php on line 100
-[13-Nov-2017 12:42:54 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_twofactor() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Twofactor.php on line 100
-[13-Nov-2017 12:44:32 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_twofactor() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Twofactor.php on line 100
-[13-Nov-2017 12:44:37 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_twofactor() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Twofactor.php on line 100
-[13-Nov-2017 12:44:55 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_twofactor() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Twofactor.php on line 100
-[13-Nov-2017 12:44:59 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_twofactor() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Twofactor.php on line 100
-[13-Nov-2017 12:45:05 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_twofactor() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Twofactor.php on line 100
-[13-Nov-2017 12:45:11 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_twofactor() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Twofactor.php on line 100
-[13-Nov-2017 12:45:18 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_twofactor() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Twofactor.php on line 100
-[13-Nov-2017 12:57:45 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_twofactor() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Twofactor.php on line 100
-[13-Nov-2017 12:57:50 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_twofactor() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Twofactor.php on line 100
-[13-Nov-2017 12:58:02 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_twofactor() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Twofactor.php on line 100
-[13-Nov-2017 12:58:07 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_twofactor() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Twofactor.php on line 100
-[13-Nov-2017 12:58:11 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_twofactor() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Twofactor.php on line 100
-[13-Nov-2017 13:00:38 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_twofactor() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Twofactor.php on line 100
-[13-Nov-2017 13:01:30 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_twofactor() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Twofactor.php on line 100
-[13-Nov-2017 13:01:35 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_twofactor() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Twofactor.php on line 100
-[13-Nov-2017 13:01:40 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_twofactor() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Twofactor.php on line 100
-[13-Nov-2017 13:03:33 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_twofactor() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Twofactor.php on line 99
-[13-Nov-2017 13:03:54 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_twofactor() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Twofactor.php on line 99
-[13-Nov-2017 13:04:03 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_twofactor() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Twofactor.php on line 98
-[13-Nov-2017 13:04:09 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_twofactor() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Twofactor.php on line 98
-[13-Nov-2017 13:04:12 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_twofactor() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Twofactor.php on line 98
-[13-Nov-2017 13:04:16 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_twofactor() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Twofactor.php on line 98
-[13-Nov-2017 19:19:16 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_twofactor() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Twofactor.php on line 98
-[13-Nov-2017 19:19:40 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_twofactor() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Twofactor.php on line 98
-[13-Nov-2017 19:19:42 Asia/Bangkok] PHP Fatal error:  Call to a member function plain_twofactor() on null in /home/limb8391/public_html/application/modules/Authentication/controllers/Twofactor.php on line 98
-[13-Nov-2017 20:55:20 Asia/Bangkok] PHP Fatal error:  Call to undefined method User_model::check_levels_ui() in /home/limb8391/public_html/application/modules/Rest_server/controllers/Auth_token.php on line 47
-[13-Nov-2017 20:55:58 Asia/Bangkok] PHP Fatal error:  Call to undefined method User_model::check_levels_ui() in /home/limb8391/public_html/application/modules/Rest_server/controllers/Auth_token.php on line 47
-[13-Nov-2017 20:56:41 Asia/Bangkok] PHP Fatal error:  Call to undefined method User_model::check_levels_ui() in /home/limb8391/public_html/application/modules/Rest_server/controllers/Auth_token.php on line 47
-[13-Nov-2017 20:58:31 Asia/Bangkok] PHP Fatal error:  Call to undefined method User_model::check_levels_ui() in /home/limb8391/public_html/application/modules/Rest_server/controllers/Auth_token.php on line 47
+[17-Nov-2017 20:44:56 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
+[17-Nov-2017 20:46:03 Asia/Bangkok] PHP Fatal error:  require_once(): Failed opening required '/home/limb8391/public_html/application/modules/Rest_server/libraries/JWT.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/limb8391/public_html/application/helpers/authorization_helper.php on line 3
+[17-Nov-2017 20:46:04 Asia/Bangkok] PHP Fatal error:  require_once(): Failed opening required '/home/limb8391/public_html/application/modules/Rest_server/libraries/JWT.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/limb8391/public_html/application/helpers/authorization_helper.php on line 3
+[17-Nov-2017 20:46:37 Asia/Bangkok] PHP Fatal error:  Call to undefined function doctype() in /home/limb8391/public_html/application/modules/General/views/include/header.php on line 2
+[17-Nov-2017 20:48:35 Asia/Bangkok] PHP Fatal error:  require_once(): Failed opening required '/home/limb8391/public_html/application/modules/Rest_server/libraries/JWT.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/limb8391/public_html/application/helpers/authorization_helper.php on line 3
+[17-Nov-2017 20:49:00 Asia/Bangkok] PHP Fatal error:  require_once(): Failed opening required '/home/limb8391/public_html/application/modules/Rest_server/libraries/JWT.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/limb8391/public_html/application/helpers/authorization_helper.php on line 3
+[17-Nov-2017 20:49:44 Asia/Bangkok] PHP Fatal error:  Call to a member function css() on null in /home/limb8391/public_html/application/modules/General/libraries/Tb_dhd_css.php on line 51
+[17-Nov-2017 20:50:05 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
+[17-Nov-2017 21:34:37 Asia/Bangkok] PHP Fatal error:  Call to a member function get_object_data() on null in /home/limb8391/public_html/application/modules/General/libraries/Tb_dhd_css.php on line 53
+[17-Nov-2017 21:36:23 Asia/Bangkok] PHP Fatal error:  Call to a member function css() on null in /home/limb8391/public_html/application/modules/General/libraries/Tb_dhd_css.php on line 51
+[17-Nov-2017 21:36:37 Asia/Bangkok] PHP Fatal error:  Call to a member function css() on null in /home/limb8391/public_html/application/modules/General/libraries/Tb_dhd_css.php on line 51
+[17-Nov-2017 21:42:17 Asia/Bangkok] PHP Fatal error:  Call to a member function css() on null in /home/limb8391/public_html/application/modules/General/libraries/Tb_dhd_css.php on line 51
+[17-Nov-2017 21:42:50 Asia/Bangkok] PHP Fatal error:  Call to a member function build_navbar() on null in /home/limb8391/public_html/application/modules/Admin/controllers/Admin.php on line 17
+[17-Nov-2017 21:53:48 Asia/Bangkok] PHP Fatal error:  Cannot use isset() on the result of a function call (you can use "null !== func()" instead) in /home/limb8391/public_html/application/modules/Rest_server/controllers/Users.php on line 183
+[17-Nov-2017 22:02:00 Asia/Bangkok] PHP Fatal error:  Cannot use [] for reading in /home/limb8391/public_html/application/modules/Rest_server/controllers/Users.php on line 200
+[17-Nov-2017 22:15:05 Asia/Bangkok] PHP Parse error:  syntax error, unexpected end of file in /home/limb8391/public_html/application/modules/Rest_server/controllers/Users.php on line 324
+[17-Nov-2017 22:49:56 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
+[17-Nov-2017 22:49:56 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
+[17-Nov-2017 22:51:03 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
+[17-Nov-2017 22:51:18 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
+[17-Nov-2017 22:51:50 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
+[17-Nov-2017 22:52:04 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
+[17-Nov-2017 22:52:45 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
+[17-Nov-2017 23:08:19 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
+[17-Nov-2017 23:08:28 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
+[17-Nov-2017 23:08:36 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
+[17-Nov-2017 23:09:23 Asia/Bangkok] PHP Fatal error:  Call to undefined function link_tag() in /home/limb8391/public_html/application/modules/General/libraries/Tb_dhd_css.php on line 82
+[17-Nov-2017 23:09:36 Asia/Bangkok] PHP Fatal error:  Call to undefined function link_tag() in /home/limb8391/public_html/application/modules/General/libraries/Tb_dhd_css.php on line 82
+[17-Nov-2017 23:09:44 Asia/Bangkok] PHP Fatal error:  Call to undefined function link_tag() in /home/limb8391/public_html/application/modules/General/libraries/Tb_dhd_css.php on line 82
+[17-Nov-2017 23:10:15 Asia/Bangkok] PHP Fatal error:  Call to undefined function link_tag() in /home/limb8391/public_html/application/modules/General/libraries/Tb_dhd_css.php on line 82
+[17-Nov-2017 23:10:23 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
+[17-Nov-2017 23:10:49 Asia/Bangkok] PHP Fatal error:  Call to undefined function link_tag() in /home/limb8391/public_html/application/modules/General/libraries/Tb_dhd_css.php on line 82
+[17-Nov-2017 23:11:20 Asia/Bangkok] PHP Fatal error:  Call to undefined function link_tag() in /home/limb8391/public_html/application/modules/General/libraries/Tb_dhd_css.php on line 82
+[17-Nov-2017 23:11:32 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
+[17-Nov-2017 23:11:51 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
+[17-Nov-2017 23:12:32 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
+[17-Nov-2017 23:13:18 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
+[17-Nov-2017 23:13:24 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
+[17-Nov-2017 23:13:28 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
+[17-Nov-2017 23:13:34 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
+[17-Nov-2017 23:13:45 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
+[17-Nov-2017 23:13:49 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
+[17-Nov-2017 23:15:24 Asia/Bangkok] PHP Fatal error:  Call to a member function get_object_data() on null in /home/limb8391/public_html/application/modules/General/libraries/Tb_dhd_css.php on line 53
+[17-Nov-2017 23:15:49 Asia/Bangkok] PHP Fatal error:  Call to undefined method Admin_dyn_menu::get_opengraph_property() in /home/limb8391/public_html/application/modules/Admin/controllers/Admin.php on line 19
+[17-Nov-2017 23:20:07 Asia/Bangkok] PHP Fatal error:  Call to a member function get_object_data() on null in /home/limb8391/public_html/application/modules/General/libraries/Tb_dhd_css.php on line 53
+[17-Nov-2017 23:20:36 Asia/Bangkok] PHP Fatal error:  Call to a member function get_object_data() on null in /home/limb8391/public_html/application/modules/General/libraries/Tb_dhd_css.php on line 53
+[17-Nov-2017 23:20:45 Asia/Bangkok] PHP Fatal error:  Call to a member function get_object_data() on null in /home/limb8391/public_html/application/modules/General/libraries/Tb_dhd_css.php on line 53
+[17-Nov-2017 23:21:23 Asia/Bangkok] PHP Fatal error:  Call to a member function get_object_data() on null in /home/limb8391/public_html/application/modules/General/libraries/Tb_dhd_css.php on line 53
+[17-Nov-2017 23:21:34 Asia/Bangkok] PHP Fatal error:  Call to a member function get_object_data() on null in /home/limb8391/public_html/application/modules/General/libraries/Tb_dhd_css.php on line 53
+[17-Nov-2017 23:21:46 Asia/Bangkok] PHP Fatal error:  Call to a member function get_object_data() on null in /home/limb8391/public_html/application/modules/General/libraries/Tb_dhd_css.php on line 53
+[17-Nov-2017 23:22:03 Asia/Bangkok] PHP Fatal error:  Call to a member function get_object_data() on null in /home/limb8391/public_html/application/modules/General/libraries/Tb_dhd_css.php on line 53
+[17-Nov-2017 23:23:12 Asia/Bangkok] PHP Fatal error:  Call to undefined method Admin_dyn_menu::get_opengraph_property() in /home/limb8391/public_html/application/modules/Admin/controllers/Admin.php on line 19
+[17-Nov-2017 23:25:22 Asia/Bangkok] PHP Fatal error:  Call to a member function get_navmenu_property() on null in /home/limb8391/public_html/application/modules/Admin/libraries/Admin_dyn_menu.php on line 480
+[17-Nov-2017 23:25:37 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
+[17-Nov-2017 23:26:07 Asia/Bangkok] PHP Fatal error:  Call to a member function get_user_active() on null in /home/limb8391/public_html/application/modules/Admin/views/rest_server.php on line 44
+[17-Nov-2017 23:26:43 Asia/Bangkok] PHP Fatal error:  Call to a member function get_user_active() on null in /home/limb8391/public_html/application/modules/Admin/views/rest_server.php on line 44
+[17-Nov-2017 23:28:33 Asia/Bangkok] PHP Fatal error:  Call to a member function get_user_active() on null in /home/limb8391/public_html/application/modules/Admin/views/rest_server.php on line 44
+[17-Nov-2017 23:28:56 Asia/Bangkok] PHP Fatal error:  Call to a member function build_navbar() on null in /home/limb8391/public_html/application/modules/Admin/controllers/Admin.php on line 17
+[17-Nov-2017 23:29:06 Asia/Bangkok] PHP Fatal error:  Call to a member function get_user_active() on null in /home/limb8391/public_html/application/modules/Admin/views/rest_server.php on line 44
+[17-Nov-2017 23:29:34 Asia/Bangkok] PHP Fatal error:  Call to a member function get_user_active() on null in /home/limb8391/public_html/application/modules/Admin/views/rest_server.php on line 44
+[17-Nov-2017 23:29:45 Asia/Bangkok] PHP Fatal error:  Call to a member function get_user_active() on null in /home/limb8391/public_html/application/modules/Admin/views/rest_server.php on line 44
+[17-Nov-2017 23:33:39 Asia/Bangkok] PHP Fatal error:  Cannot re-assign $this in /home/limb8391/public_html/application/modules/Admin/libraries/Admin_dyn_menu.php on line 313
+[17-Nov-2017 23:34:01 Asia/Bangkok] PHP Fatal error:  Cannot re-assign $this in /home/limb8391/public_html/application/modules/Admin/libraries/Admin_dyn_menu.php on line 363
+[17-Nov-2017 23:34:14 Asia/Bangkok] PHP Fatal error:  Cannot re-assign $this in /home/limb8391/public_html/application/modules/Admin/libraries/Admin_dyn_menu.php on line 475
+[17-Nov-2017 23:41:41 Asia/Bangkok] PHP Fatal error:  Call to a member function get_user_active() on null in /home/limb8391/public_html/application/modules/Admin/views/manage.php on line 44
+[17-Nov-2017 23:42:18 Asia/Bangkok] PHP Fatal error:  Call to undefined method Admin_dyn_menu::build_menu_title() in /home/limb8391/public_html/application/modules/Admin/views/manage.php on line 5
+[17-Nov-2017 23:58:40 Asia/Bangkok] PHP Fatal error:  Call to a member function get_object_data() on null in /home/limb8391/public_html/application/modules/Admin/libraries/Tb_dhd_css.php on line 53
+[17-Nov-2017 23:59:05 Asia/Bangkok] PHP Fatal error:  Call to a member function get_object_data() on null in /home/limb8391/public_html/application/modules/Admin/libraries/Tb_dhd_css.php on line 53
+[17-Nov-2017 23:59:09 Asia/Bangkok] PHP Fatal error:  Call to a member function get_object_data() on null in /home/limb8391/public_html/application/modules/Admin/libraries/Tb_dhd_css.php on line 53
+[18-Nov-2017 00:03:23 Asia/Bangkok] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting identifier (T_STRING) in /home/limb8391/public_html/application/modules/Admin/models/Admin_model.php on line 217
+[18-Nov-2017 00:03:43 Asia/Bangkok] PHP Fatal error:  Cannot redeclare Admin_model::get_data() in /home/limb8391/public_html/application/modules/Admin/models/Admin_model.php on line 374
+[18-Nov-2017 00:03:54 Asia/Bangkok] PHP Fatal error:  Cannot redeclare Admin_model::get_data() in /home/limb8391/public_html/application/modules/Admin/models/Admin_model.php on line 374
+[18-Nov-2017 00:04:37 Asia/Bangkok] PHP Fatal error:  Call to undefined method Admin_model::get_object_data() in /home/limb8391/public_html/application/modules/Admin/libraries/Admin_javascript.php on line 54
+[18-Nov-2017 00:04:53 Asia/Bangkok] PHP Fatal error:  Call to undefined method Admin_model::get_navmenu_data() in /home/limb8391/public_html/application/modules/Admin/libraries/Admin_dyn_menu.php on line 55
+[18-Nov-2017 00:05:19 Asia/Bangkok] PHP Fatal error:  Call to undefined method Admin_model::get_navmenu_data() in /home/limb8391/public_html/application/modules/Admin/libraries/Admin_dyn_menu.php on line 55
+[18-Nov-2017 00:07:05 Asia/Bangkok] PHP Fatal error:  Call to a member function get_object_data() on null in /home/limb8391/public_html/application/modules/Admin/libraries/Admin_css.php on line 53
+[18-Nov-2017 00:08:14 Asia/Bangkok] PHP Fatal error:  Call to a member function get_object_data() on null in /home/limb8391/public_html/application/modules/Admin/libraries/Admin_css.php on line 53
+[18-Nov-2017 00:08:36 Asia/Bangkok] PHP Fatal error:  Call to undefined function link_tag() in /home/limb8391/public_html/application/modules/Admin/libraries/Admin_css.php on line 82
+[18-Nov-2017 10:07:58 Asia/Bangkok] PHP Fatal error:  Call to a member function select_all_user() on null in /home/limb8391/public_html/application/modules/Admin/libraries/Admin_form.php on line 60
+[18-Nov-2017 10:42:18 Asia/Bangkok] PHP Fatal error:  Call to a member function delete_cache() on null in /home/limb8391/public_html/application/modules/Admin/controllers/Admin.php on line 30
+[18-Nov-2017 12:23:44 Asia/Bangkok] PHP Fatal error:  Call to undefined function div_open() in /home/limb8391/public_html/application/modules/Admin/libraries/Admin_form.php on line 141
+[18-Nov-2017 14:09:53 Asia/Bangkok] PHP Parse error:  syntax error, unexpected ',' in /home/limb8391/public_html/application/helpers/cilm_limononoto_helper.php on line 8
+[18-Nov-2017 14:26:46 Asia/Bangkok] PHP Fatal error:  Cannot redeclare Admin::view_xml() in /home/limb8391/public_html/application/modules/Admin/controllers/Admin.php on line 95
+[18-Nov-2017 14:27:01 Asia/Bangkok] PHP Fatal error:  Cannot redeclare Admin::view_xml() in /home/limb8391/public_html/application/modules/Admin/controllers/Admin.php on line 95
+[18-Nov-2017 23:05:25 Asia/Bangkok] PHP Fatal error:  Call to undefined method Admin_libraries::set_message_errors() in /home/limb8391/public_html/application/modules/Admin/libraries/Admin_form.php on line 131
+[18-Nov-2017 23:35:38 Asia/Bangkok] PHP Fatal error:  Call to a member function unset_errors() on null in /home/limb8391/public_html/application/modules/Rest_server/controllers/Admin.php on line 143
+[19-Nov-2017 00:17:41 Asia/Bangkok] PHP Fatal error:  Call to a member function update_user() on null in /home/limb8391/public_html/application/modules/Rest_server/controllers/Admin.php on line 185
+[19-Nov-2017 00:18:49 Asia/Bangkok] PHP Fatal error:  Call to a member function update_user() on null in /home/limb8391/public_html/application/modules/Rest_server/controllers/Admin.php on line 176
+[19-Nov-2017 00:19:22 Asia/Bangkok] PHP Fatal error:  Call to a member function update_user() on null in /home/limb8391/public_html/application/modules/Rest_server/controllers/Admin.php on line 175
+[19-Nov-2017 00:26:24 Asia/Bangkok] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in /home/limb8391/public_html/application/modules/Rest_server/models/Rest_model.php on line 170

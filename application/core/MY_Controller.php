@@ -27,7 +27,7 @@ class MY_Controller extends MX_Controller
 	    if($method == "OPTIONS") {
 	        die();
 	    }
-	    $this->load->module(array('General','Authentication','Contributor','Member','Admin','Rest_server'));
+	    $this->load->module(array('General','Authentication','User','Admin','Rest_server'));
     }
 
     public function set_timezone() {
@@ -57,7 +57,6 @@ class MY_Controller extends MX_Controller
         if($_login)    
             return true;
             $this->session->unset_userdata('login');
-			redirect('auth');  
 		}  
 	function _check_vaidity($params =array()){
 	//digunakan,saat setelah login untuk mengecek sesion kadaluarsa tanpa logout, data akan diupdate 

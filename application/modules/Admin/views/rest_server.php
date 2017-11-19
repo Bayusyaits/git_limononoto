@@ -33,7 +33,7 @@
 	         $config = is_dir('./feeds/');
 	         var_dump($config);
 	         $plaintext = encrypt_plaintext('525');
-	         $decrypt = decrypt_ciphertext('Udd5OV89pQu3Ny0SWMTaJhSRZfv4foYkMXboRMgoQKVUW9UKAjUMmqzk/rlIQK7KVNmQetr/WSZYwe0n5nBVhA==');
+	         $decrypt = decrypt_ciphertext('den4cG+SBThby2Q5SpNvasF7AXnrQA6EY/VonkNFfYfLPdQNqgQwSt1ZmOc4Krbmh3Sk5PJyOJ73HrorH2CQEg==');
 	         $domainName = $_SERVER['HTTP_HOST'] . '/';
 	         $arrContextOptions=array(
 	    "ssl"=>array(
@@ -41,17 +41,14 @@
 	        "verify_peer_name"=>false,
 	    ),
 	);  
-			 $results = $this->opengraph;
-			 print_r($results);
-			 //echo $decrypt;
         ?>
         </p>
 		
         <ol>
             <li><a href="<?php echo site_url('api/users'); ?>">Users</a> - defaulting to JSON</li>
             <li><a href="<?php echo site_url('api/users/format/csv'); ?>">Users</a> - get it in CSV</li>
-            <li><a href="<?php echo site_url('api/users/id/1530817002'); ?>">User #1</a> - defaulting to JSON  (users/id/1)</li>
-            <li><a href="<?php echo site_url('api/users/1530817002'); ?>">User #1</a> - defaulting to JSON  (users/1)</li>
+            <li><a href="<?php echo site_url('api/users/id/'.decrypt_ciphertext($this->login['id'])); ?>">User #1</a> - defaulting to JSON  (users/id/1)</li>
+            <li><a href="<?php echo site_url('api/users/'.decrypt_ciphertext($this->login['id'])); ?>">User #1</a> - defaulting to JSON  (users/1)</li>
             <li><a href="<?php echo site_url('api/users/id/1530817002.xml'); ?>">User #1</a> - get it in XML (users/id/1.xml)</li>
             <li><a href="<?php echo site_url('api/users/id/1530817002/format/xml'); ?>">User #1</a> - get it in XML (users/id/1/format/xml)</li>
             <li><a href="<?php echo site_url('api/users/id/1530817002?format=xml'); ?>">User #1</a> - get it in XML (users/id/1?format=xml)</li>

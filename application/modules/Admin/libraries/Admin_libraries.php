@@ -54,7 +54,7 @@ class Admin_libraries
 	 * @access public
 	 * @var object
 	 */
-	public $CI;
+	public $ci;
 	/**
 	 * Variable for loading the config array into
 	 * @access public
@@ -105,24 +105,24 @@ class Admin_libraries
 	private $login;
 	public function __construct()
 	{
-		$this->CI = & get_instance();
+		$this->ci = & get_instance();
 		// Dependancies
 		if(CI_VERSION >= 2.2){
-			$this->CI->load->library('driver');
+			$this->ci->load->library('driver');
 		}
 		// config/aauth.php
 		$this->config->load('auth');
-		$this->config_vars = $this->CI->config->item('auth');
-		$this->CI->lang->load('auth_lang');
+		$this->config_vars = $this->ci->config->item('auth');
+		$this->ci->lang->load('auth_lang');
 		
 		// load error and info messages from flashdata (but don't store back in flashdata)
-		$this->errors = $this->CI->session->flashdata('errors') ?: array();
-		$this->infos = $this->CI->session->flashdata('infos') ?: array();
+		$this->errors = $this->ci->session->flashdata('errors') ?: array();
+		$this->infos = $this->ci->session->flashdata('infos') ?: array();
 		
-		$this->CI->load->library(array('email', 'form_validation', 'session'));
-		$this->CI->load->helper(array('cookie', 'language','url'));
-		$this->CI->load->model('auth_model');	
-		$this->login = $this->CI->session->userdata('login');
+		$this->ci->load->library(array('email', 'form_validation', 'session'));
+		$this->ci->load->helper(array('cookie', 'language','url'));
+		$this->ci->load->model('auth_model');	
+		$this->login = $this->ci->session->userdata('login');
 	}
 
 	
@@ -130,7 +130,29 @@ class Admin_libraries
 	{
 		return get_instance()->$var;
 	}
+	public function unset_errors($errors){
+	    if($this->CI->session->userdata($errors)){
+		   $this->CI->session->unset_userdata($errors);
+		 }else{
+			 return false;
+		 }
+		 return $errors;
+    }
+    public function set_message_errors($errors){
+	    $message = array();
 
+        // use active record database to get the menu.
+	    $html_out  = "\t".''."\n";
+
+	    if($errors){
+		   $html_out = '<span class="lm-error-message is-visible">'.$errors.'</span>';
+		 }else{
+		   $html_out = '<span class="lm-error-message">'.$errors.'</span>';
+		 }
+        $html_out .= "\t".'' . "\n";
+		 return $html_out;
+    }
+    
     public function set_form_message_errors($errors){
 	    $message = array();
 
@@ -140,7 +162,7 @@ class Admin_libraries
 	    if($errors){
 		   $html_out .= '<p class="lm-form-message">'.$errors.'</p>';
 		 }else{
-		   $html_out .= '<p class="lm-form-message">'.$this->CI->lang->line('contact_subheading').'</p>';
+		   $html_out .= '<p class="lm-form-message">'.$this->ci->lang->line('contact_subheading').'</p>';
 		 }
         $html_out .= "\t".'</div>'. "\n";
 		 return $html_out;
@@ -212,6 +234,50 @@ class Admin_libraries
 		else
 			return FALSE;
 	}
+	
+	function build_manage()
+    {	
+    	$results = $this->ci->admin_model->select_all_user();
+    	$this->fieldset = array('class' => 'fieldset');
+        $html_out = "\t\t".'<div class="lm-feed-levels fade out">'."\n";
+        if (is_array($results) || is_object($results))
+		{
+			foreach ($results as $row) {
+			$id = decrypt_ciphertext($row->id);
+			$email = decrypt_email($row->email);
+			$firstname = decrypt_ciphertext($row->first_name);
+			$lastname = decrypt_ciphertext($row->last_name);
+			$level = decrypt_ciphertext($row->levels_id);			
+		if($level == 539203){
+		$html_out .= "\t\t".'<div class="lm-feed-module">'."\n";
+		$html_out .= "\t\t".'<div class="lm-col lm-col-2">'."\n";
+		$html_out .= "\t\t".'<h5>Contributor</h5>'."\n";
+		$html_out .= "\t".'</div>'."\n";
+		$html_out .= "\t\t".'<div class="lm-col lm-col-2">'."\n";
+		$html_out .= form_fieldset('', $this->fieldset)."\n";
+		$html_out .= div_open('lm-manage-modal',$id,$row->id).'<div class="lm-manage-id">'.$id.'</div>'.'<div class="lm-manage-email">'.$email.'</div>'.div_close()."\n";        
+        $html_out .= form_fieldset_close()."\n";
+        $html_out .= "\t".'</div>'."\n";
+        $html_out .= "\t".'</div>'."\n";
+		}
+		if($level == 539202){	
+		$html_out .= "\t\t".'<div class="lm-feed-module">'."\n";
+		$html_out .= "\t\t".'<div class="lm-col lm-col-2">'."\n";
+		$html_out .= "\t\t".'<h5>Member</h5>'."\n";
+		$html_out .= "\t".'</div>'."\n";
+		$html_out .= "\t\t".'<div class="lm-col lm-col-2">'."\n";
+		$html_out .= form_fieldset('', $this->fieldset)."\n";
+		$html_out .= div_open('lm-manage-modal',$id,$row->id).'<div class="lm-manage-id">'.$id.'</div>'.'<div class="lm-manage-email">'.$email.'</div>'.div_close()."\n";        
+        $html_out .= form_fieldset_close()."\n";
+        $html_out .= "\t".'</div>'."\n";
+        $html_out .= "\t".'</div>'."\n";
+		}	
+    	}
+    	}
+    	$html_out .= "\t".'</div>'."\n";
+    	
+	 	return $html_out;   
+    }
  	/**
 	 * user_exist_by_name !DEPRECATED!
 	 * Check if user exist by name

@@ -166,3 +166,68 @@ $config['join'] = array(
 		                     'rules'   => 'required|min_length[2]'
 		                  )
 		            );		            
+$config['insert_user'] = array(
+		               array(
+		                     'field'   => 'firstname',
+		                     'label'   => 'First name',
+		                     'rules'   => 'required|alpha'
+		                  ),
+		                  array(
+		                     'field'   => 'lastname',
+		                     'label'   => 'Last name',
+		                     'rules'   => 'required|alpha'
+		                  ),
+		                  array(
+		                     'field'   => 'level',
+		                     'label'   => 'Level user',
+		                     'rules'   => 'required'
+		                  ),
+		                  array(
+		                     'field'   => 'country',
+		                     'label'   => 'Country',
+		                     'rules'   => 'required'
+		                  ),
+		                  array(
+		                     'field'   => 'password',
+		                     'label'   => 'Password',
+		                     'rules'   => 'required'
+		                  ),
+		                  array(
+		                     'field'   => 'cpassword',
+		                     'label'   => 'Confirm password',
+		                     'rules'   => 'required|matches[password]'
+		                  ),
+		                  array(
+		                     'field'   => 'email',
+		                     'label'   => 'Email',
+		                     'rules'   => 'trim|required|valid_email|min_length[5]'
+		                  )
+		        );
+$config['update_user'] = array(
+		               	  array(
+		                     'field'   => 'id',
+		                     'label'   => 'Id',
+		                     'rules'   => 'trim|required|numeric'
+		                  ),
+		               	  array(
+		                     'field'   => 'firstname',
+		                     'label'   => 'First name',
+		                     'rules'   => 'required|alpha'
+		                  ),
+		                  array(
+		                     'field'   => 'lastname',
+		                     'label'   => 'Last name',
+		                     'rules'   => 'required|alpha'
+		                  ),
+		                  array(
+		                     'field'   => 'level',
+		                     'label'   => 'Level user',
+		                     'rules'   => 'required'
+		                  ),
+		                  array(
+		                     'field'   => 'email',
+		                     'label'   => 'Email',
+		                     'rules'   => 'trim|required|valid_email|min_length[5]'
+		                  )
+		                  
+		        );

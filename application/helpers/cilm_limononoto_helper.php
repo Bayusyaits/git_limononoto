@@ -1,5 +1,23 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+if ( ! function_exists('div_open'))
+{
+	function div_open($class = NULL, $id = NULL, $ref_id = NULL)
+	{
+	    $code   = '<div ';
+	    $code   .= ( $class != NULL )   ? 'class="'. $class .'" '   : '';
+	    $code   .= ( $id != NULL )      ? 'id="'. $id .'" '         : '';
+	    $code   .= ( $ref_id != NULL )      ? 'data-user="'. $ref_id .'" '  : '';
+	    $code   .= '>';
+	    return $code;
+	}
+	}
+if ( ! function_exists('div_close'))
+{
+function div_close()
+{
+    return '</div>';
+}
+}
 if ( ! function_exists('recurse'))
 {
 function recurse($path){

@@ -13,6 +13,7 @@ class Admin_dyn_menu {
     private $class_parent    = 'class="parent"';
     private $class_last        = 'class="last"';
 	private $login;
+	private $tabel_admin = 'tb_dyn_panel_administrator';
 	
     // --------------------------------------------------------------------
 
@@ -29,11 +30,29 @@ class Admin_dyn_menu {
         log_message('debug', "Menu Class Initialized");
         $this->login = $this->ci->session->userdata('login');
     }
+
+    // --------------------------------------------------------------------
+
+    /**
+     * build_menu($this->tabel_admin, $type)
+     *
+     * Description:
+     *
+     * builds the Dynaminc dropdown menu
+     * $this->tabel_admin allows for passing in a MySQL table name for different menu tables.
+     * $type is for the type of menu to display ie; topmenu, mainmenu, sidebar menu
+     * or a footer menu.
+     *
+     * @param    string    the MySQL database table name.
+     * @param    string    the type of menu to display.
+     * @return    string    $html_out using CodeIgniter achor tags.
+     */
     
-    function build_navbar($table = 'tb_dyn_menu')
+    
+    function build_navbar()
     {
         $menu = array();
-        $results = $this->ci->menu_model->get_navmenu_data($table);
+        $results = $this->ci->admin_model->get_navmenu_data($this->tabel_admin);
     	$html_out  = "\t".'<header id="lm-header" class="lm-header lm-hd lm-navbar-wrapper slide down">'."\n";
     	$html_out .= "\t\t".'<div class="lm-container-fluid">'."\n";
     	$html_out .= "\t\t".'<nav class="lm-primary-nav lm-nav-top lm-hd-nav lm-nav" id="lm-primary-nav"><ul class="lm-nav-ul">'."\n";
@@ -81,12 +100,11 @@ class Admin_dyn_menu {
         return $html_out;
     } 
         
-    function build_menu($table = 'tb_dyn_menu')
+    function build_menu()
     {
         $menu = array();
         $level_user_id = decrypt_ciphertext($this->login['levels_id']);
-        $table = $this->ci->admin_model->get_table_levels_user($level_user_id);
-        $results = $this->ci->admin_model->get_navmenu_userdata($table,$level_user_id);
+        $results = $this->ci->admin_model->get_navmenu_userdata($this->tabel_admin,$level_user_id);
         $html_out  = "\t".'<nav class="lm-navmenu lm-navmenu-left" data-focus="#first-link">'."\n";
         $html_out .= $this->build_navmenu_nav();
         $html_out .= "\t".'<div class="lm-navmenu-content">'."\n";
@@ -126,7 +144,7 @@ class Admin_dyn_menu {
                     }
 
                     // loop through and build all the child submenus.
-                    $html_out .= $this->get_childs_user($table, $id,$levels_id);
+                    $html_out .= $this->get_childs_user($id,$levels_id);
 
                     $html_out .= '</li>'."\n";
                 }
@@ -141,10 +159,10 @@ class Admin_dyn_menu {
         return $html_out;
     }
     
-    function build_navmenu_nav($table = 'tb_dyn_menu')
+    function build_navmenu_nav()
     {
         $menu = array();
-        $results = $this->ci->menu_model->get_navmenu_data($table);
+        $results = $this->ci->admin_model->get_navmenu_data($this->tabel_admin);
         $html_out  = "\t".'<div class="lm-navmenu-nav">'."\n";
 
          if (is_array($results) || is_object($results))
@@ -182,10 +200,10 @@ class Admin_dyn_menu {
         return $html_out;
     }  
 
-    function build_menuright($table = 'tb_dyn_menu')
+    function build_menuright()
     {
         $menu = array();
-        $results = $this->ci->menu_model->get_navmenu_data($table);
+        $results = $this->ci->admin_model->get_navmenu_data($this->tabel_admin);
         $html_out  = "\t".'<div class="lm-secondary-nav lm-navmenu-right"  id="lm-navmenu-right">'."\n";
 		$html_out .= "\t\t".'<nav class="lm-main-nav">'."\n";
 		$html_out .= "\t\t".'<ul class="lm-navmenu-right-ul">'."\n";
@@ -237,9 +255,11 @@ class Admin_dyn_menu {
 
         return $html_out;
     }    
-    function build_menu_footer($table = 'tb_dyn_menu')
+    
+    
+    function build_menu_footer()
     {
-        $results = $this->ci->menu_model->get_navmenu_data($table);
+        $results = $this->ci->admin_model->get_navmenu_data($this->tabel_admin);
         $html_out  = '<nav>';
 		$html_out .= '<ul class="lm-col-left">';
 
@@ -276,7 +296,7 @@ class Admin_dyn_menu {
                     }
 
                     // loop through and build all the child submenus.
-                    $html_out .= $this->get_childs($table, $id);
+                    $html_out .= $this->get_childs($tabel_admin, $id);
 
                     $html_out .= '</li>';
                 }
@@ -290,9 +310,9 @@ class Admin_dyn_menu {
 
         return $html_out;
     }  
-    function get_childs_user($table,$ref_id,$ref_level_id)
+    function get_childs_user($ref_id,$ref_level_id)
     {
-    	$results_ref = $this->ci->admin_model->get_childs_navmenu_userdata($table,$ref_id);
+    	$results_ref = $this->ci->admin_model->get_childs_navmenu_userdata($this->tabel_admin,$ref_id);
         $has_subcats = FALSE;
         $html_out = '<ul>';
         if (is_array($results_ref) || is_object($results_ref))
@@ -328,7 +348,7 @@ class Admin_dyn_menu {
 	                }
 	
 	                // Recurse call to get more child submenus.
-	                $html_out .= $this->get_childs_user($table, $id,$level_id);
+	                $html_out .= $this->get_childs_user($id,$level_id);
 	
 	                $html_out .= '</li>' . "\n";
 	            }
@@ -340,9 +360,9 @@ class Admin_dyn_menu {
         return ($has_subcats) ? $html_out : FALSE;   
         
     }
-    function get_childs($table, $ref_id)
+    function get_childs($ref_id)
     {
-    	$results_ref = $this->ci->menu_model->get_childs_navmenu_data($table,$ref_id);
+    	$results_ref = $this->ci->admin_model->get_childs_navmenu_data($this->tabel_admin,$ref_id);
         $has_subcats = FALSE;
         $html_out = '<ul>';
 
@@ -378,7 +398,7 @@ class Admin_dyn_menu {
                 }
 
                 // Recurse call to get more child submenus.
-                $html_out .= $this->get_childs($table, $id);
+                $html_out .= $this->get_childs($id);
 
                 $html_out .= '</li>' . "\n";
             }else if ($dyn_group_id == 532702 && $position == 2)  {
@@ -395,7 +415,7 @@ class Admin_dyn_menu {
                 }
 
                 // Recurse call to get more child submenus.
-                $html_out .= $this->get_childs($table, $id);
+                $html_out .= $this->get_childs($id);
 
                 $html_out .= '</li>' . "\n";
 	            
@@ -408,11 +428,10 @@ class Admin_dyn_menu {
         return ($has_subcats) ? $html_out : FALSE;
     }
     
-    function build_menu_title_user()
+    function build_menu_title()
     {
-        $level_user_id = decrypt_ciphertext($this->login['levels_id']);
-    	$table = $this->ci->admin_model->get_table_levels_user($level_user_id);
-        $results = $this->ci->admin_model->get_navmenu_userdata($table,$level_user_id);
+    	$level_user_id = decrypt_ciphertext($this->login['levels_id']);
+        $results = $this->ci->admin_model->get_navmenu_userdata($this->tabel_admin,$level_user_id);
         $html_out  = "\t".''."\n";
 		$html_out .= "";
 
@@ -452,9 +471,27 @@ class Admin_dyn_menu {
 
         return $html_out;
     } 
-    function sitemap_image($table = 'tb_dyn_menu')
+
+    function get_opengraph_property()
     {
-	    $results = $this->ci->menu_model->get_menu_image($table);    	
+    	$property = null;
+        $results = $this->ci->admin_model->get_navmenu_property($this->tabel_admin,uri_string());
+        if (is_array($results) || is_object($results))
+		{
+		foreach ($results as $row) {
+		$property['description'] = $row->description;
+		$property['page_title'] = $row->page_title;
+		$property['title'] = $row->title;
+		$property['last_edit'] = $row->last_edit;
+		$property['page_title'] = ucfirst($property['page_title']);
+		$property['title'] = ucwords($property['title']);
+		}
+		}
+        return $property;
+    }
+    function sitemap_image()
+    {
+	    $results = $this->ci->admin_model->get_menu_image($this->tabel_admin);    	
     	if (is_array($results) || is_object($results))
 		{
 			$html_out  = "\t".''."\n";

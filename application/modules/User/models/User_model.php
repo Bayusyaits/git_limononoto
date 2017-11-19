@@ -54,11 +54,30 @@ class User_model extends CI_Model {
 
             foreach ($query->result() as $row)
             {
-                $user           = $row->ui;
+                $user           = $row->ui_id;
             }
         }
       return $user;
 
+	    }
+	    
+	     public function get_user_active()
+	   {
+       $query = $this->db->get($this->table);
+       $object = array();
+       $data = NULL;
+       if ($query->num_rows() > 0)
+        {
+            foreach ($query->result() as $row)
+            {
+            	$active = $row->activation;
+            	$activation = decrypt_ciphertext($row->activation);
+            	if(isset($activation)  && $activation == USER_ACTIVE){
+                	$data = $active;
+                	}
+            }
+        }
+      return $data;
 	    }
   public function check_levels_id()
     {
@@ -146,7 +165,7 @@ return $results;
  public function update_user($data) {
       	extract($data);
 	    $this->db->where('id', $data['id']);
-	    $this->db->update('tb_ui_users', array('last_login' => time()));
+	    $this->db->update($this->table, array('last_login' => time()));
 	    return true;
 	}
  public function select_user_id($id){
@@ -171,31 +190,31 @@ return $results;
     return $this->_data;
   }
    public function select_all_user(){
-    $query = $this->db->get('tb_ui_users');
+    $query = $this->db->get($this->table);
         if ($query->num_rows() > 0)
         {
             // `id`, `title`, `link_type`, `page_id`, `module_name`, `url`, `uri`, `dyn_group_id`, `position`, `target`, `parent_id`, `show_menu`
 
             foreach ($query->result() as $row)
             {
-                $users[$row->id]           	= decrypt_ciphertext($row->id);
-                $users[$row->username]      = decrypt_ciphertext($row->username);
-                $users[$row->email]         = decrypt_email($row->email);
-                $users[$row->levels_id]     = decrypt_ciphertext($row->levels_id);
-                $users[$row->country_id]    = decrypt_ciphertext($row->country_id);
-                $users[$row->website_url]   = decrypt_ciphertext($row->website_url);
-                $users[$row->phone_number]  = decrypt_ciphertext($row->phone_number);
-                $users[$row->description]   = decrypt_ciphertext($row->description);
-                $users[$row->created_on]    = decrypt_ciphertext($row->created_on);
-                $users[$row->activation]    = decrypt_ciphertext($row->activation);
+                $users['id'][$row->id]           	= decrypt_ciphertext($row->id);
+                $users['username'][$row->username]      = decrypt_ciphertext($row->username);
+                $users['email'][$row->email]         = decrypt_email($row->email);
+                $users['levels_id'][$row->levels_id]     = decrypt_ciphertext($row->levels_id);
+                $users['country_id'][$row->country_id]    = decrypt_ciphertext($row->country_id);
+                $users['website_url'][$row->website_url]   = decrypt_ciphertext($row->website_url);
+                $users['phone_number'][$row->phone_number]  = decrypt_ciphertext($row->phone_number);
+                $users['description'][$row->description]   = decrypt_ciphertext($row->description);
+                $users['created_on'][$row->created_on]    = decrypt_ciphertext($row->created_on);
+                $users['activation'][$row->activation]    = decrypt_ciphertext($row->activation);
             }
         }
       $query->free_result();
       return $users;
   }
    public function select_all_user_active(){
-   	$this->db->where('activation', '4');
-    $query = $this->db->get('tb_ui_users');
+    $activation = $this->user_model->get_user_active();
+    $query = $this->db->get_where($this->table,array('activation'=>$activation));
         if ($query->num_rows() > 0)
         {
             // `id`, `title`, `link_type`, `page_id`, `module_name`, `url`, `uri`, `dyn_group_id`, `position`, `target`, `parent_id`, `show_menu`
@@ -220,7 +239,7 @@ return $results;
 public function delete_user($id){
 	$this->db->select('*');
 	$this->db->where('id', $id);
-    $this->db->delete('tb_ui_users');
+    $this->db->delete($this->table);
     if ($this->db->affected_rows() > 0) {
       return true;
     }
