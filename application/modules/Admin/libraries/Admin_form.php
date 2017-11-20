@@ -14,6 +14,7 @@ class Admin_form {
     private $class_last    = 'class="last_form"';
     private $login;
     private $signup;
+    private $csrf;
   
     // --------------------------------------------------------------------
 
@@ -35,6 +36,9 @@ class Admin_form {
 		}
 		log_message('debug', "Form Class Initialized");
         $this->email = decrypt_ciphertext($this->login['email']);
+        $this->csrf = array(
+        'name' => $this->ci->security->get_csrf_token_name(),
+        'hash' => $this->ci->security->get_csrf_hash());
     }
 
     // --------------------------------------------------------------------
@@ -112,6 +116,12 @@ class Admin_form {
 			'type' => 'password',
 			'name' => 'cpassword',
 			'placeholder' => $this->ci->lang->line('confirm_password_placeholder'));
+			
+			$this->input_csrf = array(
+			'class' => 'lm-ui-csrf',
+			'type' => 'hidden',
+			'name' => $this->csrf['name'],
+			'value' => $this->csrf['hash']);
 		$html_out = "\t\t".'<div class="lm-feed-base">'."\n";
 		$html_out .= "\t\t".'<div class="lm-form-admin">'."\n";
 	    $html_out .= form_open_multipart('api/insert/user', $this->form_manage)."\n";
@@ -154,7 +164,7 @@ class Admin_form {
         $html_out .= $this->build_input_select('tb_lvc_countries', 'lm-ui-country', 5327010, 'country', 'country')."\n";
         $html_out .= $this->ci->admin_libraries->set_message_errors($this->messages['country'])."\n";
         $html_out .= form_fieldset_close()."\n";
-        
+        $html_out .= form_input($this->input_csrf)."\n";
 		$html_out .= form_fieldset('', $this->fieldset)."\n";
 		$html_out .= form_submit('submit',$this->ci->lang->line('insert_button'),$this->insert_button)."\n";
 		$html_out .= form_fieldset_close()."\n";
@@ -177,7 +187,7 @@ class Admin_form {
 		$this->delete_button = array('id' => 'lm-ui-delete-submit',' class'=>'lm-input-modal');
 		$html_out = "\t\t".'<div class="lm-feed-base">'."\n";
 		$html_out .= "\t\t".'<div class="lm-form-admin">'."\n";
-	    $html_out .= form_open_multipart('api/update/user', $this->form_manage)."\n";
+	    $html_out .= form_open('', $this->form_manage)."\n";
 	    $this->fieldset = array('class' => 'fieldset');
 		 if (is_array($results) || is_object($results))
 		{
@@ -223,6 +233,11 @@ class Admin_form {
 			'name' => 'level',
 			'value' => $level,
 			'placeholder' => $this->ci->lang->line('level_placeholder'));
+			$this->input_csrf = array(
+			'class' => 'lm-ui-csrf',
+			'type' => 'hidden',
+			'name' => $this->csrf['name'],
+			'value' => $this->csrf['hash']);
 		$html_out .= "\t\t".'<div class="lm-col lm-col-1">'."\n";	
 		$html_out .= form_fieldset('', $this->fieldset)."\n";
 		$html_out .= form_input($this->input_id)."\n";
@@ -243,10 +258,11 @@ class Admin_form {
 		$html_out .= form_input($this->input_level)."\n";
 		$html_out .= form_fieldset_close()."\n";
 		$html_out .= "\t\t".'<div class="lm-col lm-col-2">'."\n";	
-		$html_out .= form_submit('',$this->ci->lang->line('update_button'),$this->update_button)."\n";
+		$html_out .= form_button('',$this->ci->lang->line('update_button'),$this->update_button)."\n";
 		$html_out .= "\t".'</div>'."\n";
+		$html_out .= form_input($this->input_csrf)."\n";
 		$html_out .= "\t\t".'<div class="lm-col lm-col-2">'."\n";
-		$html_out .= form_submit('',$this->ci->lang->line('delete_button'),$this->delete_button)."\n";
+		$html_out .= form_button('',$this->ci->lang->line('delete_button'),$this->delete_button)."\n";
 		$html_out .= "\t".'</div>'."\n";
 		$html_out .= "\t".'</div>'."\n";	
 			}

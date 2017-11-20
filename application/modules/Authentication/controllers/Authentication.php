@@ -22,7 +22,10 @@ class Authentication extends MY_Controller {
 	public function index()
 	{	
 		force_ssl();
-		$this->opengraph = 	array(
+		if ($this->auth_libraries->is_logged_in()) {
+		redirect('');
+        }else {
+	    $this->opengraph = 	array(
 								'type'				=> 'website',
 								'title'				=> $this->property['page_title'],
 								'url'				=> site_url(),
@@ -43,6 +46,7 @@ class Authentication extends MY_Controller {
             'menu_footer' => $this->menu_footer,
             'js' => $this->js
         ));
+        }
 
 	}
 	/*Before you can login, you must active your account with the code sent to your email address.

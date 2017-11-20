@@ -144,7 +144,7 @@ class Admin_dyn_menu {
                     }
 
                     // loop through and build all the child submenus.
-                    $html_out .= $this->get_childs_user($id,$levels_id);
+                    $html_out .= $this->get_childs($id,$levels_id);
 
                     $html_out .= '</li>'."\n";
                 }
@@ -310,7 +310,7 @@ class Admin_dyn_menu {
 
         return $html_out;
     }  
-    function get_childs_user($ref_id,$ref_level_id)
+    function get_childs($ref_id,$ref_level_id)
     {
     	$results_ref = $this->ci->admin_model->get_childs_navmenu_userdata($this->tabel_admin,$ref_id);
         $has_subcats = FALSE;
@@ -348,7 +348,7 @@ class Admin_dyn_menu {
 	                }
 	
 	                // Recurse call to get more child submenus.
-	                $html_out .= $this->get_childs_user($id,$level_id);
+	                $html_out .= $this->get_childs($id,$level_id);
 	
 	                $html_out .= '</li>' . "\n";
 	            }
@@ -359,75 +359,7 @@ class Admin_dyn_menu {
 
         return ($has_subcats) ? $html_out : FALSE;   
         
-    }
-    function get_childs($ref_id)
-    {
-    	$results_ref = $this->ci->admin_model->get_childs_navmenu_data($this->tabel_admin,$ref_id);
-        $has_subcats = FALSE;
-        $html_out = '<ul>';
-
-        if (is_array($results_ref) || is_object($results_ref))
-		{
-		foreach ($results_ref as $ref) {
-		$title = $ref->title;
-		$dyn_group_id = $ref->dyn_group_id;
-		$url = $ref->url;
-		$id = $ref->id;
-		$show = $ref->show;
-		$icon = $ref->icon;
-		$target = $ref->target;
-		$attribute = $ref->attribute;
-		$parent = $ref->parent_id;
-		$position = $ref->position;
-		$is_parent = $ref->is_parent;
-		$title = ucfirst($title);
-		$url = strtolower($url);
-		if ($dyn_group_id == 532701)    // are we allowed to see this menu?
-            {
-        	if($position == 2)
-                {
-                $has_subcats = TRUE;
-
-                if ($is_parent == TRUE)
-                {
-                    $html_out .= '<li class="lm-navmenu-link" title="'.$title.'">'.anchor('#', '<span>'.ucfirst($title).'</span>');
-                }
-                else
-                {
-                    $html_out .= '<li class="lm-navmenu-link" title="'.$title.'">'.anchor($url, '<span>'.ucfirst($title).'</span>');
-                }
-
-                // Recurse call to get more child submenus.
-                $html_out .= $this->get_childs($id);
-
-                $html_out .= '</li>' . "\n";
-            }else if ($dyn_group_id == 532702 && $position == 2)  {
-            
-                $has_subcats = TRUE;
-
-                if ($menu[$i]['is_parent'] == TRUE)
-                {
-                    $html_out .= '<li class="lm-navmenu-link" title="'.$title.'">'.anchor('#', '<span>'.ucfirst($title).'</span>');
-                }
-                else
-                {
-                    $html_out .= '<li class="lm-navmenu-link" title="'.$title.'">'.anchor($url, '<span>'.ucfirst($title).'</span>');
-                }
-
-                // Recurse call to get more child submenus.
-                $html_out .= $this->get_childs($id);
-
-                $html_out .= '</li>' . "\n";
-	            
-            }
-        }
-        }
-        }
-        $html_out .= "\t\t\t\t\t".'</ul>' . "\n";
-
-        return ($has_subcats) ? $html_out : FALSE;
-    }
-    
+    }    
     function build_menu_title()
     {
     	$level_user_id = decrypt_ciphertext($this->login['levels_id']);

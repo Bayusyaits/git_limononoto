@@ -45,6 +45,7 @@ class Passwordreset extends MY_Controller
 				$data['message'] = $this->lang->line('success_passwordreset');
 				$data['redirect'] = 'api/passwordreset';
 				$this->session->set_tempdata("password_reset", $this->auth_model->get_data(), 3600);
+				$this->session->set_tempdata($this->security->get_csrf_token_name(), $this->security->get_csrf_hash(),3600);
 				}// else_empty
 		}
 		else {

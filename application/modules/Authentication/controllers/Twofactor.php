@@ -15,7 +15,7 @@ class Twofactor extends MY_Controller
 		$this->css = $this->tb_dhd_css->build_css();
 		$this->menu_title = $this->auth_dyn_menu->build_menu_title();
 		$this->menu_footer = $this->auth_dyn_menu->build_menu_footer();
-		$this->js = $this->tb_dft_javascript->build_javascript();
+		$this->js = $this->tb_dft_javascript->build_javascript_form();
 		$this->login = $this->session->userdata('login');
 		$id = $this->login['id'];
 		$this->user = $this->user_model->get_user_name($id);
@@ -32,7 +32,6 @@ class Twofactor extends MY_Controller
         ));
 		$email = $this->input->get('e-mail');
 		$activation = $this->input->get('activation');
-		$this->javascript[] = $this->bower->add(js_url().'/ajax/lm-form.js');
 		if($twofactor != null && $this->input->get('v2') == 'a' && $email == decrypt_email($login['email']) && $login['activation_code'] != null){
 		$this->form_auth = $this->tb_form->build_form_twofactor();
 			if($this->password->validate_bcrypt($activation, $login['activation_code'])) {
@@ -53,14 +52,15 @@ class Twofactor extends MY_Controller
 		}//else_$get_vc
 		$this->render('include/footer', array(
             'menu_footer' => $this->menu_footer,
-            'js' => $this->js,
-            'javascript' => $this->javascript
+            'js' => $this->js
         ));	
 
 	}
 	public function twofactor(){
 		$errors         = array();      // array to hold validation errors
-		$data			= array();
+		$data			= array(
+				'csrfName' => $this->security->get_csrf_token_name(),
+                'csrfHash' => $this->security->get_csrf_hash());
 		$this->config->load('validation_rules');
 		$twofactor = $this->session->userdata('login');
 		$email = decrypt_email($twofactor['email']);

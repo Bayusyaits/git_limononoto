@@ -16,7 +16,9 @@ class Login extends MX_Controller
 	
 	public function login(){
 		$errors         = array();      // array to hold validation errors
-		$data			= array();
+		$data			= array(
+				'csrfName' => $this->security->get_csrf_token_name(),
+                'csrfHash' => $this->security->get_csrf_hash());
 		$this->config->load('validation_rules');
 		$this->form_validation->set_rules($this->config->item('login'));
 		$email = $this->input->post('email');
@@ -62,6 +64,7 @@ class Login extends MX_Controller
 				$data['message'] = $this->lang->line('success_login');
 				$data['redirect'] = $link;	
 				$this->session->set_userdata("login", $this->auth_model->get_data());
+				$this->session->set_tempdata($this->security->get_csrf_token_name(), $this->security->get_csrf_hash(),7200);
 		}// else_empty
 		}else {
 		$data['success'] = false;

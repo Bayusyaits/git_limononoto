@@ -14,6 +14,8 @@ class Tb_form {
     private $class_last    = 'class="last_form"';
     private $login;
     private $signup;
+    private $csrf;
+    private $ses_csrf;
   
     // --------------------------------------------------------------------
 
@@ -36,6 +38,10 @@ class Tb_form {
 		}
 		log_message('debug', "Form Class Initialized");
         $this->email = decrypt_ciphertext($this->login['email']);
+        $this->csrf = array(
+        'name' => $this->ci->security->get_csrf_token_name(),
+        'hash' => $this->ci->security->get_csrf_hash());
+         $this->ses_csrf = $this->ci->session->tempdata($this->csrf['name']);
     }
 
     // --------------------------------------------------------------------
@@ -89,6 +95,7 @@ class Tb_form {
 		'id' => 'lm-ui-login-email',
 		'type' => 'email',
 		'name' => 'email',
+		'autocomplete'=>"off",
 		'placeholder' => $this->ci->lang->line('email_placeholder'));
 		
 		$this->input_password = array(
@@ -96,7 +103,13 @@ class Tb_form {
 		'id' => 'lm-ui-login-password',
 		'type' => 'text',
 		'name' => 'password',
+		'autocomplete'=>"off",
 		'placeholder' => $this->ci->lang->line('password_placeholder'));
+		$this->input_csrf = array(
+			'class' => 'lm-ui-csrf',
+			'type' => 'hidden',
+			'name' => $this->csrf['name'],
+			'value' => $this->csrf['hash']);
 		
 		$this->input_submit = array('id' => 'lm-ui-login-submit');
 		
@@ -128,6 +141,7 @@ class Tb_form {
                         $html_out .= "\t".'<p class="lm-link-tab">'.anchor('passwordreset', $this->ci->lang->line('link_passwordreset_title')).'</p>'."\n";
                         $html_out .= '</div></div>'."\n";
                         $html_out .= form_fieldset_close()."\n";
+                        $html_out .= form_input($this->input_csrf)."\n";
                         $html_out .= form_fieldset('', $this->fieldset)."\n";
                         $html_out .= form_submit('',$this->ci->lang->line('login_submit_btn'),$this->input_submit)."\n";
                         $html_out .= form_fieldset_close()."\n";
@@ -147,7 +161,13 @@ class Tb_form {
 		'id' => 'lm-ui-newsletter-email',
 		'type' => 'email',
 		'name' => 'email',
+		'autocomplete'=>"off",
 		'placeholder' => $this->ci->lang->line('email_placeholder'));
+		$this->input_csrf = array(
+			'class' => 'lm-ui-csrf',
+			'type' => 'hidden',
+			'name' => $this->csrf['name'],
+			'value' => $this->csrf['hash']);
 		
 		$this->input_submit = array('id' => 'lm-ui-newsletter-submit');
 		
@@ -167,6 +187,7 @@ class Tb_form {
                         $html_out .= form_input($this->input_email)."\n";
                         $html_out .= "\t".'<span class="is-hidden" id="is-hidden-newsletter-email"></span>'."\n";
                         $html_out .= form_fieldset_close()."\n";
+                        $html_out .= form_input($this->input_csrf)."\n";
                         $html_out .= form_fieldset('', $this->fieldset)."\n";
                         $html_out .= form_submit('',$this->ci->lang->line('newsletter_submit_btn'),$this->input_submit)."\n";
                         $html_out .= form_fieldset_close()."\n";
@@ -186,7 +207,13 @@ class Tb_form {
 		'id' => 'lm-ui-passwordreset-email',
 		'type' => 'email',
 		'name' => 'email',
+		'autocomplete'=>"off",
 		'placeholder' => $this->ci->lang->line('email_placeholder'));
+		$this->input_csrf = array(
+			'class' => 'lm-ui-csrf',
+			'type' => 'hidden',
+			'name' => $this->csrf['name'],
+			'value' => $this->csrf['hash']);
 		
 
 		$this->input_submit = array('id' => 'lm-ui-passwordreset-submit');
@@ -208,6 +235,7 @@ class Tb_form {
         $html_out .= form_input($this->input_email)."\n";
         $html_out .= "\t".'<span class="is-hidden" id="is-hidden-passwordreset-email"></span>'."\n";
         $html_out .= form_fieldset_close()."\n";
+        $html_out .= form_input($this->input_csrf)."\n";
         $html_out .= form_fieldset('', $this->fieldset)."\n";
         $html_out .= form_submit('',$this->ci->lang->line('passwordreset_submit_btn'),$this->input_submit)."\n";
         $html_out .= form_fieldset_close()."\n";
@@ -228,7 +256,13 @@ class Tb_form {
 		'id' => 'lm-ui-signup-terms-email',
 		'type' => 'email',
 		'name' => 'email',
+		'autocomplete'=>"off",
 		'placeholder' => $this->ci->lang->line('email_placeholder'));
+		$this->input_csrf = array(
+			'class' => 'lm-ui-csrf',
+			'type' => 'hidden',
+			'name' => $this->csrf['name'],
+			'value' => $this->csrf['hash']);
 		
 
 		$this->input_submit = array('id' => 'lm-ui-signup-terms-submit');
@@ -249,6 +283,7 @@ class Tb_form {
                         $html_out .= form_input($this->input_email);
                         $html_out .= "\t".'<span class="is-hidden" id="is-hidden-signup-email"></span>'."\n";
                         $html_out .= form_fieldset_close()."\n";
+                        $html_out .= form_input($this->input_csrf)."\n";
                         $html_out .= form_fieldset('', $this->fieldset)."\n";
                         $html_out .= form_submit('',$this->ci->lang->line('signup_submit_btn'),$this->input_submit)."\n";
                         $html_out .= form_fieldset_close()."\n";
@@ -268,6 +303,7 @@ class Tb_form {
 		'id' => 'lm-ui-twofactor-birthday',
 		'type' => 'text',
 		'name' => 'birthday',
+		'autocomplete'=>"off",
 		'placeholder' => $this->ci->lang->line('birthday_placeholder'));
 		
 		$this->input_code = array(
@@ -275,8 +311,14 @@ class Tb_form {
 		'id' => 'lm-ui-twofactor-code',
 		'type' => 'text',
 		'name' => 'code',
+		'autocomplete'=>"off",
 		'value' => $this->ci->input->get('activation'),
 		'placeholder' => $this->ci->lang->line('verification_code_placeholder'));
+		$this->input_csrf = array(
+			'class' => 'lm-ui-csrf',
+			'type' => 'hidden',
+			'name' => $this->csrf['name'],
+			'value' => $this->ses_csrf);
 		
 		$this->input_submit = array('id' => 'lm-ui-twofactor-submit');
 		$this->fieldset = array('class' => 'fieldset');
@@ -305,7 +347,7 @@ class Tb_form {
         $html_out .= form_input($this->input_code);
         $html_out .= "\t".'<span class="is-hidden" id="is-hidden-code"></span>'."\n";
         $html_out .= form_fieldset_close()."\n";
-        
+        $html_out .= form_input($this->input_csrf)."\n";
         $html_out .= form_fieldset('', $this->fieldset)."\n";
         $html_out .= form_submit('',$this->ci->lang->line('activation_twofactor_btn'),$this->input_submit)."\n";
         $html_out .= form_fieldset_close()."\n";
@@ -422,6 +464,7 @@ class Tb_form {
 		'id' => 'lm-ui-matching',
 		'type' => 'text',
 		'name' => 'code',
+		'autocomplete'=>"off",
 		'value' => $this->ci->input->get('activation'),
 		'placeholder' => $this->ci->lang->line('verification_code_placeholder'));
 
@@ -430,6 +473,7 @@ class Tb_form {
 		'id' => 'lm-ui-auth-password',
 		'type' => 'password',
 		'name' => 'password',
+		'autocomplete'=>"off",
 		'placeholder' => $this->ci->lang->line('password_placeholder'));
 		
 		$this->input_cpassword = array(
@@ -437,8 +481,14 @@ class Tb_form {
 		'id' => 'lm-ui-auth-cpassword',
 		'type' => 'password',
 		'name' => 'cpassword',
+		'autocomplete'=>"off",
 		'placeholder' => $this->ci->lang->line('confirm_password_placeholder'));
-			
+		
+		$this->input_csrf = array(
+			'class' => 'lm-ui-csrf',
+			'type' => 'hidden',
+			'name' => $this->csrf['name'],
+			'value' => $this->ses_csrf);	
 
 		$this->input_submit = array('id' => 'lm-ui-resetpassword-submit');
 		
@@ -479,7 +529,7 @@ class Tb_form {
                         $html_out .= form_input($this->input_cpassword)."\n";
                         $html_out .= "\t".'<span class="is-hidden" id="is-hidden-cpassword"></span>'."\n";
                         $html_out .= form_fieldset_close()."\n";
-                        
+                        $html_out .= form_input($this->input_csrf)."\n";
                         $html_out .= form_fieldset('', $this->fieldset)."\n";
                         $html_out .= form_submit('',$this->ci->lang->line('activation_resetpassword_btn'),$this->input_submit)."\n";
                         $html_out .= form_fieldset_close()."\n";
@@ -503,8 +553,14 @@ class Tb_form {
 		'id' => 'lm-ui-activation-code',
 		'type' => 'text',
 		'name' => 'code',
+		'autocomplete'=>"off",
 		'placeholder' => $this->ci->lang->line('verification_code_placeholder'));
 		
+		$this->input_csrf = array(
+			'class' => 'lm-ui-csrf',
+			'type' => 'hidden',
+			'name' => $this->csrf['name'],
+			'value' => $this->ses_csrf);
 
 		$this->input_submit = array('id' => 'lm-ui-activation-submit');
 		
@@ -528,6 +584,7 @@ class Tb_form {
                         $html_out .= form_input($this->input_code);
                         $html_out .= "\t".'<span class="is-hidden" id="is-hidden-code"></span>'."\n";
                         $html_out .= form_fieldset_close()."\n";
+                        $html_out .= form_input($this->input_csrf)."\n";
                         $html_out .= form_fieldset('', $this->fieldset)."\n";
                         $html_out .= form_submit('',$this->ci->lang->line('activation_btn'),$this->input_submit)."\n";
                         $html_out .= form_fieldset_close()."\n";
@@ -565,6 +622,7 @@ class Tb_form {
 		'id' => 'lm-ui-auth-password',
 		'type' => 'password',
 		'name' => 'password',
+		'autocomplete'=>"off",
 		'placeholder' => $this->ci->lang->line('password_placeholder'));
 		
 		$this->input_cpassword = array(
@@ -572,9 +630,15 @@ class Tb_form {
 		'id' => 'lm-ui-auth-cpassword',
 		'type' => 'password',
 		'name' => 'cpassword',
+		'autocomplete'=>"off",
 		'placeholder' => $this->ci->lang->line('confirm_password_placeholder'));
-			
-
+		
+		$this->input_csrf = array(
+			'class' => 'lm-ui-csrf',
+			'type' => 'hidden',
+			'name' => $this->csrf['name'],
+			'value' => $this->ses_csrf);	
+		
 		$this->input_submit = array('id' => 'lm-ui-signup-submit');
 		
 		$this->fieldset = array('class' => 'fieldset');
@@ -621,7 +685,7 @@ class Tb_form {
                         $html_out .= form_fieldset('', $this->fieldset)."\n";
                         $html_out .= $this->build_input_select('tb_lvc_countries', 'lm-ui-country', 5327010, 'country', 'country')."\n";
                         $html_out .= form_fieldset_close()."\n";
-                        
+                        $html_out .= form_input($this->input_csrf)."\n";
                         $html_out .= form_fieldset('', $this->fieldset)."\n";
                         $html_out .= form_submit('',$this->ci->lang->line('signup_btn'),$this->input_submit)."\n";
                         $html_out .= form_fieldset_close()."\n";
@@ -700,6 +764,7 @@ class Tb_form {
 		'id' => 'lm-ui-phonenumber',
 		'type' => 'tel',
 		'name' => 'phonenumber',
+		'autocomplete'=>"off",
 		'placeholder' => $this->ci->lang->line('phonenumber_placeholder'));
 		
 		$this->input_email = array(
@@ -707,6 +772,7 @@ class Tb_form {
 		'id' => 'lm-ui-email',
 		'type' => 'email',
 		'name' => 'email',
+		'autocomplete'=>"off",
 		'placeholder' => $this->ci->lang->line('email_placeholder'));
 		
 		$this->input_message = array(
@@ -715,7 +781,12 @@ class Tb_form {
 		'name' => 'message',
 		'rows'        => '3',
 		'placeholder' => $this->ci->lang->line('message_placeholder'));
-			
+		
+		$this->input_csrf = array(
+			'class' => 'lm-ui-csrf',
+			'type' => 'hidden',
+			'name' => $this->csrf['name'],
+			'value' => $this->csrf['hash']);	
 
 		$this->input_button = array('id' => 'lm-ui-contact-submit',' class'=>'lm-input-modal');
 		
@@ -761,7 +832,7 @@ class Tb_form {
                         $html_out .= form_textarea($this->input_message)."\n";
                         $html_out .= $this->ci->auth_libraries->set_message_errors($this->messages['message'])."\n";
                         $html_out .= form_fieldset_close()."\n";
-                        
+                        $html_out .= form_input($this->input_csrf)."\n";
                         $html_out .= form_fieldset('', $this->fieldset)."\n";
                         $html_out .= form_button('',$this->ci->lang->line('contact_submit_btn'),$this->input_button)."\n";
                         $html_out .= form_fieldset_close()."\n";
@@ -805,6 +876,7 @@ class Tb_form {
 		'id' => 'lm-ui-phonenumber',
 		'type' => 'tel',
 		'name' => 'phonenumber',
+		'autocomplete'=>"off",
 		'placeholder' => $this->ci->lang->line('phonenumber_placeholder'));
 		
 		$this->input_email = array(
@@ -812,6 +884,7 @@ class Tb_form {
 		'id' => 'lm-ui-email',
 		'type' => 'email',
 		'name' => 'email',
+		'autocomplete'=>"off",
 		'placeholder' => $this->ci->lang->line('email_placeholder'));
 		
 		$this->input_message = array(
@@ -821,7 +894,12 @@ class Tb_form {
 		'rows'        => '3',
 		'placeholder' => $this->ci->lang->line('message_placeholder'));
 			
-
+		$this->input_csrf = array(
+			'class' => 'lm-ui-csrf',
+			'type' => 'hidden',
+			'name' => $this->csrf['name'],
+			'value' => $this->csrf['hash']);
+		
 		$this->input_button = array('id' => 'lm-ui-join-submit',' class'=>'lm-input-modal');
 		
 		$this->fieldset = array('class' => 'fieldset');
@@ -870,7 +948,7 @@ class Tb_form {
                         $html_out .= form_fieldset('', $this->fieldset)."\n";
                         $html_out .= $this->build_input_file(1,'lm-ui-cover-letter',$this->ci->lang->line('attach_cover_letter'))."\n";
                         $html_out .= form_fieldset_close()."\n";
-                        
+                        $html_out .= form_input($this->input_csrf)."\n";
                         $html_out .= form_fieldset('', $this->fieldset)."\n";
                         $html_out .= form_textarea($this->input_message)."\n";
                         $html_out .= $this->ci->auth_libraries->set_message_errors($this->messages['answer'])."\n";

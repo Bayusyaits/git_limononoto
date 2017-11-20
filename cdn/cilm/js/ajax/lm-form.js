@@ -9,7 +9,12 @@
 	    store.setJWT = function(data){
 	        this.JWT = data;
 	    }
-	var $lm_form = jQuery.noConflict();
+	    var $lm_form = jQuery.noConflict();
+	    var csfrData = {};
+		csfrData[$lm_form(".lm-ui-csrf").attr("name")] 	= $lm_form(".lm-ui-csrf").attr("value")
+		$lm_form.ajaxSetup({
+			data: csfrData
+			});
     $lm_form(document).ready(function(e) {
                 $lm_form("#lm-ui-newsletter-submit").click(function(event) {
                     event.preventDefault();
@@ -28,7 +33,7 @@
 		};
 		// process the form
 				   
-                    jQuery.ajax({
+                    $lm_form.ajax({
                     
                     	type 		: 'POST', // define the type of HTTP verb we want to use (POST for our form)
 						url			: val_url+"val/newsletter",
@@ -112,7 +117,7 @@
 		};
 		// process the form
 		
-                    jQuery.ajax({
+                    $lm_form.ajax({
                     
                     	type 		: 'POST', // define the type of HTTP verb we want to use (POST for our form)
 						url			: val_url+"auth/login",
@@ -216,7 +221,7 @@
 			'birthday' : $lm_form('input[name=birthday]#lm-ui-twofactor-birthday').val().replace(/<|>/g, "")
 		};
 				   
-                    jQuery.ajax({
+                    $lm_form.ajax({
                     
                     	type 		: 'POST', // define the type of HTTP verb we want to use (POST for our form)
 						url			: val_url+"auth/twofactor",
@@ -309,7 +314,7 @@
 		// process the form
 		
 		   
-                    jQuery.ajax({
+                    $lm_form.ajax({
                     
                     	type 		: 'POST', // define the type of HTTP verb we want to use (POST for our form)
 						url			: val_url+"auth/passwordreset",
@@ -405,7 +410,7 @@
 		// process the form
 		
 		   
-                    jQuery.ajax({
+                    $lm_form.ajax({
                     
                     	type 		: 'POST', // define the type of HTTP verb we want to use (POST for our form)
 						url			: val_url+"auth/resetpassword",
@@ -509,7 +514,7 @@
 		// process the form
 		
 		   
-                    jQuery.ajax({
+                    $lm_form.ajax({
                     
                     	type 		: 'POST', // define the type of HTTP verb we want to use (POST for our form)
 						url			: val_url+"auth/signup",
@@ -609,7 +614,7 @@
 		// process the form
 		
 		   
-                    jQuery.ajax({
+                    $lm_form.ajax({
                     
                     	type 		: 'POST', // define the type of HTTP verb we want to use (POST for our form)
 						url			: val_url+"auth/activation/signup",
@@ -707,7 +712,7 @@
 		// process the form
 		
 		   
-                    jQuery.ajax({
+                    $lm_form.ajax({
                     
                     	type 		: 'POST', // define the type of HTTP verb we want to use (POST for our form)
 						url			: val_url+"auth/signup/session",

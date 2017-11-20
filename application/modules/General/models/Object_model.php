@@ -165,6 +165,8 @@ class Object_model extends CI_Model {
 			}
 		return $results;
 		}
+		
+		
 		public function get_childs_object_data($table,$id){
 		//$this->db->cache_on();
 		$count_record = $this->object_model->record_count($table);

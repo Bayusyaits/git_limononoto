@@ -15,7 +15,7 @@ window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){va
     <title><?php echo $this->title ?></title>
     <base href="<?php echo base_url();?>" />
    <script type="text/javascript">
-       var val_url="<?php echo base_url();?>",get_url="<?php echo uri_string();?>";
+       var val_url="<?php echo base_url();?>",get_url="<?php echo uri_string();?>"
     </script>
     <!-- Always force latest IE rendering engine & Chrome Frame -->
 	<!-- Responsive and mobile friendly stuff -->

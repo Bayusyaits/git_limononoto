@@ -9,7 +9,9 @@
 		        echo '<pre>' . print_r($this->session->userdata, TRUE) . '</pre>';
 		        
 	        ?>
-	        This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.
+	        <?php 
+	        $this->login = $this->session->userdata('login');
+	        echo decrypt_ciphertext($this->login['activation']); ?>
 	        To see the difference between static and fixed top navbars, just scroll.
 	          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
 	</div>

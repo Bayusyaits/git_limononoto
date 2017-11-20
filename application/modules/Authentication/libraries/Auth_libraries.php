@@ -131,7 +131,11 @@ class Auth_libraries
 		return get_instance()->$var;
 	}
 
-
+	function is_logged_in($activated = TRUE)
+	{
+		$this->login = $this->CI->session->userdata('login');
+		return decrypt_ciphertext($this->login['activation']) == USER_ACTIVE;
+	}
 
 	public function logout()
 	{

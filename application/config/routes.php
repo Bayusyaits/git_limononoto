@@ -50,9 +50,9 @@
 */
 $route['email'] = 'email';
 $route['default_controller'] = 'General';
-$route['load/work'] = 'General/load_work';
-$route['load/manage'] = 'Admin/load_manage';
-$route['load/blog'] = 'General/load_blog';
+$route['load/work']['POST'] = 'General/load_work';
+$route['load/manage']['POST'] = 'Admin/load_manage';
+$route['load/blog']['POST'] = 'General/load_blog';
 $route['signup'] = 'Authentication';
 $route['login'] = 'Authentication';
 $route['login/two-factor'] = 'Authentication/Twofactor';
@@ -116,8 +116,8 @@ $route['api/active/(:num)']['DELETE']                = 'Rest_server/users/active
 
 $route['api/admin/manage']['POST']                    = 'Rest_server/admin/manage';
 $route['api/insert/user']['POST']                    = 'Rest_server/admin/insert';
-$route['api/update/user']['POST']          	   			= 'Rest_server/admin/update';
-$route['api/delete/user']['POST']     				= 'Rest_server/admin/user';
+$route['update/user']['POST']          	   			= 'Admin/admin_ud/update';
+$route['delete/user']['POST']     				 = 'Admin/admin_ud/delete';
 
 //---------------------------------api buku---------------------------------------------------------
 $route['api/login']['GET']                             = 'Rest_server/Auth_token/login';
@@ -172,21 +172,21 @@ $route['api/member/project/new/(:any)']['GET']              = 'Rest_server/membe
 //---------------------------------View Token---------------------------------------------------------
 $route['api/contact']['POST']		                       	= 'Validation/contact';
 $route['api/contact/job']['POST']		                    = 'Validation/applicant';
-$route['val/newsletter']		                       		= 'Validation/Newsletter';
 $route['api/newsletter']['POST']		                	= 'Validation/newsletter';
 $route['api/newsletter']['GET']		                		= 'Validation/newsletter';
 
 //---------------------------------Api Login---------------------------------------------------------
-$route['auth/login']                      				= 'Authentication/login/login';
-$route['auth/twofactor']                      			= 'Authentication/Twofactor/twofactor';
-$route['auth/signup']                      	        = 'Authentication/signup/signup_terms';
-$route['auth/activation/signup']                      	= 'Authentication/signup/activation';
-$route['auth/signup/session']                          = 'Authentication/signup/signup';
-$route['auth/complete']                            		= 'authentication/complete';
-$route['auth/passwordreset']                     	 	= 'Authentication/passwordreset/passwordreset';
-$route['auth/resetpassword']                           = 'Authentication/passwordreset/resetpassword';
-$route['auth/confirmemail']                             = 'Authentication/signup/confirmemail';
-$route['auth/password']                            		= 'Authentication/passwordreset/password';
+$route['val/newsletter']['POST']		                       	= 'Authentication/Newsletter';
+$route['auth/login']['POST']                      				= 'Authentication/login/login';
+$route['auth/twofactor']['POST']                      			= 'Authentication/Twofactor/twofactor';
+$route['auth/signup']['POST']                      	        = 'Authentication/signup/signup_terms';
+$route['auth/activation/signup']['POST']                      	= 'Authentication/signup/activation';
+$route['auth/signup/session']['POST']                          = 'Authentication/signup/signup';
+$route['auth/complete']['POST']                            		= 'Authentication/complete';
+$route['auth/passwordreset']['POST']                     	 	= 'Authentication/passwordreset/passwordreset';
+$route['auth/resetpassword']['POST']                           = 'Authentication/passwordreset/resetpassword';
+$route['auth/confirmemail']['POST']                             = 'Authentication/signup/confirmemail';
+$route['auth/password']['POST']                            		= 'Authentication/passwordreset/password';
 
 //---------------------------------View Email---------------------------------------------------------
 $route['send-email/passwordreset']['GET']               = 'Rest_server/email/passwordreset';

@@ -210,6 +210,45 @@ class Tb_dft_javascript {
 
         return ($has_subcats) ? $html_out : FALSE;
     }
+    function build_javascript_form($table = 'tb_dft_javascript')
+    {
+        $javascript_bower = $this->ci->bower->js('default');
+        $javascript = array();
+        $results = $this->ci->object_model->get_object_data($table);
+        $html_out  = "";
+		$html_out .= "";
+		$html_out .= "\t".'<script  type="text/javascript" src="'.js_url().'jquery/jquery.min.js"></script>'."\n";
+        if (is_array($results) || is_object($results))
+		{
+        foreach ($results as $row) {
+        $title = $row->title;
+		$url = $row->url;
+		$dyn_group_id = $row->dyn_group_id;
+		$id = $row->id;
+		$show = $row->show;
+		$target = $row->target;
+		$parent = $row->parent_id;
+		$is_parent = $row->is_parent;
+                if (empty($parent) && $dyn_group_id == 532705)    // are we allowed to see this menu?
+                {
+                	$js = js_url().$url;
+                	$js_bower = $this->ci->bower->add(js_bower().$url, array('embed' => TRUE));
+                    if ($is_parent == TRUE)
+                    {
+                        // CodeIgniter's anchor(uri segments, text, attributes) tag.
+                        $html_out .= "\t".'<script type="text/javascript" src="'.$js.'?v='.$js_bower['filemtime'].'"></script>'."\n";
+                    }
+					}
+                    $html_out .= $this->get_childs($table, $id);
+                }
+            
+        }
+
+        $html_out .= '';
+        $html_out .= '' . "";
+
+        return $html_out;
+    }
 }
 // ------------------------------------------------------------------------
 // End of Dynamic_menu Library Class.

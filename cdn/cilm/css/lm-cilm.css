@@ -497,6 +497,9 @@ fieldset[disabled] .radio label,
 fieldset[disabled] .checkbox label {
   cursor: not-allowed;
 }
+input#lm-ui-csrf {
+	display: none;
+}
 .input-sm {
   height: 30px;
   padding: 5px 10px;

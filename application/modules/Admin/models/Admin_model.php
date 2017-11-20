@@ -438,14 +438,35 @@ public function insert_user($data)
 		}//else_affected_rows
 		
     }
-public function delete_user($id){
-	$this->db->select('*');
-	$this->db->where('id', $id);
-    $this->db->delete($this->table);
-    if ($this->db->affected_rows() > 0) {
-      return true;
-    }
-  }
+/**
+	 * Purge table of non-activated users
+	 *
+	 * @param	int
+	 * @return	void
+	 */
+	function purge_na($expire_period = 172800)
+	{
+		$this->db->where('activated', 0);
+		$this->db->where('UNIX_TIMESTAMP(created) <', time() - $expire_period);
+		$this->db->delete($this->table_name);
+	}
+
+	/**
+	 * Delete user record
+	 *
+	 * @param	int
+	 * @return	bool
+	 */
+	function delete_user($user_id)
+	{
+		$this->db->where('id', $user_id);
+		$this->db->delete($this->table_name);
+		if ($this->db->affected_rows() > 0) {
+			$this->delete_profile($user_id);
+			return TRUE;
+		}
+		return FALSE;
+	}
 
 public function get_data() {
 	return $this->_data;
