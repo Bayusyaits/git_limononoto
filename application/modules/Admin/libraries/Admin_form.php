@@ -15,6 +15,7 @@ class Admin_form {
     private $login;
     private $signup;
     private $csrf;
+    private $ses_csrf;
   
     // --------------------------------------------------------------------
 
@@ -25,7 +26,7 @@ class Admin_form {
     function __construct()
     {
         $this->ci =& get_instance();    // get a reference to CodeIgniter.
-        $this->ci->lang->load('auth_lang');    
+        $this->ci->lang->load('admin_lang');    
 		$this->ci->load->library(array('password','form_validation'));
 		$this->ci->load->helper(array('authorization','language'));    
         $this->login = $this->ci->session->userdata('login');
@@ -39,6 +40,7 @@ class Admin_form {
         $this->csrf = array(
         'name' => $this->ci->security->get_csrf_token_name(),
         'hash' => $this->ci->security->get_csrf_hash());
+        $this->ses_csrf = $this->ci->session->tempdata($this->csrf['name']);
     }
 
     // --------------------------------------------------------------------
@@ -157,11 +159,11 @@ class Admin_form {
         $html_out .= form_input($this->input_cpassword)."\n";
         $html_out .= $this->ci->admin_libraries->set_message_errors($this->messages['cpassword'])."\n";
         $html_out .= form_fieldset('', $this->fieldset)."\n";
-        $html_out .= $this->build_input_levels('tb_lvc_users', 'lm-ui-level', 5327010, 'level', 'level')."\n";
+        $html_out .= $this->build_input_levels('tb_lvc_users', 'lm-ui-level', null, 5327010, 'level', 'level')."\n";
         $html_out .= $this->ci->admin_libraries->set_message_errors($this->messages['level'])."\n";
         $html_out .= form_fieldset_close()."\n";
         $html_out .= form_fieldset('', $this->fieldset)."\n";
-        $html_out .= $this->build_input_select('tb_lvc_countries', 'lm-ui-country', 5327010, 'country', 'country')."\n";
+        $html_out .= $this->build_input_select('tb_lvc_countries', 'lm-ui-country',null, 5327010, 'country', 'country')."\n";
         $html_out .= $this->ci->admin_libraries->set_message_errors($this->messages['country'])."\n";
         $html_out .= form_fieldset_close()."\n";
         $html_out .= form_input($this->input_csrf)."\n";
@@ -185,10 +187,14 @@ class Admin_form {
     	);
 		$this->update_button = array('id' => 'lm-ui-update-submit',' class'=>'lm-input-modal');
 		$this->delete_button = array('id' => 'lm-ui-delete-submit',' class'=>'lm-input-modal');
+		 $this->fieldset = array('class' => 'fieldset');
 		$html_out = "\t\t".'<div class="lm-feed-base">'."\n";
 		$html_out .= "\t\t".'<div class="lm-form-admin">'."\n";
 	    $html_out .= form_open('', $this->form_manage)."\n";
-	    $this->fieldset = array('class' => 'fieldset');
+	    $html_out .= form_fieldset('', $this->fieldset)."\n";
+                        $html_out .= '<div class="lm-warning-auth lm-text-danger" id="lm-text-danger-manage">
+								<p class="lm-form-message">'.$this->ci->lang->line('create_subheading').'</p></div>'."\n";
+		$html_out .= form_fieldset_close()."\n";
 		 if (is_array($results) || is_object($results))
 		{
 			foreach ($results as $row) {
@@ -197,6 +203,8 @@ class Admin_form {
 			$firstname = decrypt_ciphertext($row->first_name);
 			$lastname = decrypt_ciphertext($row->last_name);
 			$level = decrypt_ciphertext($row->levels_id);
+			$country_id = decrypt_ciphertext($row->country_id);
+			$activation = decrypt_ciphertext($row->activation);
 			$this->input_id = array(
 			'class' => 'lm-input-modal lm-input-required', 
 			'id' => 'lm-ui-id',
@@ -241,22 +249,33 @@ class Admin_form {
 		$html_out .= "\t\t".'<div class="lm-col lm-col-1">'."\n";	
 		$html_out .= form_fieldset('', $this->fieldset)."\n";
 		$html_out .= form_input($this->input_id)."\n";
+		$html_out .= "\t".'<span class="is-hidden" id="is-hidden-id"></span>'."\n";
         $html_out .= form_fieldset_close()."\n";
         
         $html_out .= form_fieldset('', $this->fieldset)."\n";
 		$html_out .= form_input($this->input_firstname)."\n";
+		$html_out .= "\t".'<span class="is-hidden" id="is-hidden-firstname"></span>'."\n";
         $html_out .= form_fieldset_close()."\n";
         
         $html_out .= form_fieldset('', $this->fieldset)."\n";
 		$html_out .= form_input($this->input_lastname)."\n";
+		$html_out .= "\t".'<span class="is-hidden" id="is-hidden-lastname"></span>'."\n";
         $html_out .= form_fieldset_close()."\n";
         
         $html_out .= form_fieldset('', $this->fieldset)."\n";
 		$html_out .= form_input($this->input_email)."\n";
+		$html_out .= "\t".'<span class="is-hidden" id="is-hidden-email"></span>'."\n";
+        $html_out .= form_fieldset_close()."\n";
+        
+        $html_out .= form_fieldset('', $this->fieldset)."\n";
+		$html_out .= $this->build_input_levels('tb_lvc_users', 'lm-ui-level',$level, 5327010, 'level', 'level')."\n";
+		$html_out .= form_fieldset_close()."\n";
+		$html_out .= form_fieldset('', $this->fieldset)."\n";
+        $html_out .= $this->build_input_select('tb_lvc_countries','lm-ui-country',$country_id, 5327010, 'country', 'country')."\n";
         $html_out .= form_fieldset_close()."\n";
         $html_out .= form_fieldset('', $this->fieldset)."\n";
-		$html_out .= form_input($this->input_level)."\n";
-		$html_out .= form_fieldset_close()."\n";
+        $html_out .= $this->build_select_activation($activation)."\n";
+        $html_out .= form_fieldset_close()."\n";
 		$html_out .= "\t\t".'<div class="lm-col lm-col-2">'."\n";	
 		$html_out .= form_button('',$this->ci->lang->line('update_button'),$this->update_button)."\n";
 		$html_out .= "\t".'</div>'."\n";
@@ -299,7 +318,7 @@ class Admin_form {
         return $html_out;
     }
     
-    function build_input_select($table, $_id, $_dyn_group_id, $_name, $_title)
+    function build_input_select($table, $_id, $ref_id, $_dyn_group_id, $_name, $_title)
     {
     	$ci =& get_instance();
         $form_select = array();
@@ -308,20 +327,23 @@ class Admin_form {
         $html_out  = form_label('select',$_id,$this->lm_icon);
         $html_out .= "\t".'<select aria-required="true" aria-label="'.$_title.'" id="'.$_id.'" name="'.$_name.'" class="lm-multiselect">'."\n";
 
-		$html_out .= "\t".'<option class="subject lm-option-disable" disabled="disabled" selected="selected">Select '.$_title.'</option>'."\n";
-
         if (is_array($results) || is_object($results))
 		{
 			foreach ($results as $row) {
-			$show = $row->show;
 			$dyn_group_id = $row->dyn_group_id;
 			$id = $row->id;
 			$name = $row->name;
-                        // CodeIgniter's anchor(uri segments, text, attributes) tag.
-                        $html_out .= "\t".'<option class="subject" value="'.strtoupper($id).'">'.ucfirst($name).'</option>'."\n";
+            if($ref_id === $id){  
+            $html_out .= "\t".'<option class="subject lm-option-disable" selected="selected" value="'.$id.'">'.ucfirst($name).'</option>'."\n";
+            }
+             if($ref_id != $id){   
+	          $html_out .= "\t".'<option class="subject" value="'.$id.'">'.ucfirst($name).'</option>'."\n"; 
+            }
                     $html_out .= "\n";
             }
             
+        }else{
+	        $html_out .= '';
         }
 
         $html_out .= "\t".'</select>'."\n";
@@ -329,8 +351,40 @@ class Admin_form {
 
         return $html_out;
     } 
-    
-    function build_input_levels($table, $_id, $_dyn_group_id, $_name, $_title)
+    function build_select_activation($ref_id)
+    {
+    	$ci =& get_instance();
+        $form_select = array();
+		$results = activation_user();
+		$this->lm_icon = array('class' => 'lm-label-icon lm-icon-arrow-down');
+        $html_out  = form_label('select','lm-ui-activation-user',$this->lm_icon);
+        $html_out .= "\t".'<select aria-required="true" aria-label="Activation user" id="lm-ui-activation-user" name="activation_user" class="lm-multiselect">'."\n";
+
+        if (is_array($results) || is_object($results))
+		{
+			foreach ($results as $row) {
+			$id = $row['id'];
+			$name = $row['name'];
+                        // CodeIgniter's anchor(uri segments, text, attributes) tag.
+            if($ref_id == $id){  
+            $html_out .= "\t".'<option class="subject lm-option-disable" selected="selected" value="'.$id.'">'.ucfirst($name).'</option>'."\n";
+            }else{
+	          $html_out .= "\t".'<option class="subject lm-option-disable" disabled="disabled" selected="selected">Select activation user</option>'."\n"; 
+	          $html_out .= "\t".'<option class="subject" value="'.$id.'">'.ucfirst($name).'</option>'."\n"; 
+            }
+                    $html_out .= "\n";
+            }
+            
+        }else{
+	        $html_out .= '';
+        }
+
+        $html_out .= "\t".'</select>'."\n";
+        $html_out .= "\t".'<span class="is-hidden" id="is-hidden-activation-user"></span>'."\n";
+
+        return $html_out;
+    } 
+    function build_input_levels($table, $_id, $ref_id, $_dyn_group_id, $_name, $_title)
     {
     	$ci =& get_instance();
         $form_select = array();
@@ -338,8 +392,6 @@ class Admin_form {
 		$this->lm_icon = array('class' => 'lm-label-icon lm-icon-arrow-down');
         $html_out  = form_label('select',$_id,$this->lm_icon);
         $html_out .= "\t".'<select aria-required="true" aria-label="'.$_title.'" id="'.$_id.'" name="'.$_name.'" class="lm-multiselect">'."\n";
-
-		$html_out .= "\t".'<option class="subject lm-option-disable" disabled="disabled" selected="selected">Select '.$_title.'</option>'."\n";
 
         if (is_array($results) || is_object($results))
 		{
@@ -350,8 +402,15 @@ class Admin_form {
 			$name = decrypt_ciphertext($row->name);
 			$substr = substr($id,0,4);
                         // CodeIgniter's anchor(uri segments, text, attributes) tag.
-            $html_out .= "\t".'<option class="subject" value="'.strtoupper($id).'">'.ucfirst($name).'</option>'."\n";
-                    
+            if($ref_id === $id){  
+            $html_out .= "\t".'<option class="subject lm-option-disable" selected="selected" value="'.$id.'">'.ucfirst($name).'</option>'."\n";
+            }
+             if($ref_id == null){  
+            $html_out .= "\t".'<option class="subject lm-option-disable" disabled="disabled" selected="selected">Select '.$_title.'</option>'."\n"; 
+	          $html_out .= "\t".'<option class="subject" value="'.$id.'">'.ucfirst($name).'</option>'."\n"; 
+            }
+               
+            
                     // loop through and build all the child submenus.
 
                     $html_out .= "\n";

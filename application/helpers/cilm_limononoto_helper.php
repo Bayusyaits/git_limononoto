@@ -34,6 +34,45 @@ function recurse($path){
 	    }
 	}
 }
+if ( ! function_exists('activation_status'))
+{
+function activation_status($activation)
+{
+	$ci =& get_instance();
+	$this->ci->load->lang('auth_lang');
+	$access = array();
+	$level = array();
+	if($level === 1){
+		$access = $this->ci->lang->line('registered_requirement');
+	}else if($level === 2){
+		$access = $this->ci->lang->line('registered_block');
+	}else if($level === 3){
+		$access = $this->ci->lang->line('registered_moderation');
+	}else if($level === 4){
+		$access = $this->ci->lang->line('registered_moderation');
+	}else if($level === 5){
+		$access = $this->ci->lang->line('registered');
+	}else {
+		$access = $this->ci->lang->line('not_registered');
+	}
+}
+}
+if ( ! function_exists('activation_user'))
+{
+function activation_user()
+{
+	$ci =& get_instance();
+	$ci->lang->load('auth_lang');    
+	$level = [
+			['id'=>0,'name'=>ucfirst($ci->lang->line('not_registered'))],
+			['id'=>1,'name'=>ucfirst($ci->lang->line('registered_requirement'))],
+			['id'=>2,'name'=>ucfirst($ci->lang->line('registered_block'))],
+			['id'=>3,'name'=>ucfirst($ci->lang->line('registered_moderation'))],
+			['id'=>4,'name'=>ucfirst($ci->lang->line('registered_suspend'))],
+			['id'=>5,'name'=>ucfirst($ci->lang->line('registered'))]];
+	return $level;
+}
+}
 if ( ! function_exists('force_ssl'))
 {
 function force_ssl() {

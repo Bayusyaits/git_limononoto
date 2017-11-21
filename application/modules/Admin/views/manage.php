@@ -8,7 +8,7 @@ echo $this->menu_title;
 </section>
 <main class="lm-inner lm-module-container">
 <div class="lm-feed">
-   <?php echo $this->manage; ?>
+   <?php echo $this->levels; ?>
 <div class="lm-datauser" id="lm-update-datauser">
 <?php echo $this->insert; ?>
 </div>

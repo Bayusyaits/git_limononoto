@@ -166,11 +166,37 @@ return $results;
 	    $this->_data = $row;
 	    return $this->_data;
   }
- public function update_user($data) {
+public function plain_update_user($id){
+  	   $query = $this->db->get($this->table);
+       $users = array();
+       $user = null;
+       if ($query->num_rows() > 0)
+        {
+            foreach ($query->result() as $row)
+            {
+                $users[]            = $row->id;
+            }
+        }
+        if (!empty($users))
+        {
+            foreach ($users as $key => $value)
+            {
+            	$val = $value;
+            	$value = decrypt_ciphertext($value);
+                if (isset($value) && $value === $id)
+                {
+                	$user = $val;
+                }
+            }
+        }
+      return $user;
+	    }
+ public function update_user($data,$userid) {
       	extract($data);
-	    $this->db->where('id', $data['id']);
-	    $this->db->update($this->table, array('last_login' => time()));
-	    return true;
+      	$id = $this->admin_model->plain_update_user($userid);
+	    $this->db->where('id', $id);
+	    $this->db->update($this->table, $data);
+	    return ERR_NONE;
 	}
  public function select_user_id($id){
 	$query = $this->db->get_where($this->table,array('id'=>$id));
@@ -457,16 +483,16 @@ public function insert_user($data)
 	 * @param	int
 	 * @return	bool
 	 */
-	function delete_user($user_id)
-	{
-		$this->db->where('id', $user_id);
-		$this->db->delete($this->table_name);
-		if ($this->db->affected_rows() > 0) {
-			$this->delete_profile($user_id);
-			return TRUE;
-		}
-		return FALSE;
-	}
+	
+public function delete_user($userid){
+	$this->db->select('*');
+	$id = $this->admin_model->plain_update_user($userid);
+	$this->db->where('id', $id);
+    $this->db->delete($this->table);
+    if ($this->db->affected_rows() > 0) {
+      return ERR_NONE;
+    }
+  }
 
 public function get_data() {
 	return $this->_data;

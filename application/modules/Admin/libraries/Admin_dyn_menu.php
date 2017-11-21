@@ -340,7 +340,8 @@ class Admin_dyn_menu {
 	
 	                if ($is_parent == TRUE)
 	                {
-	                    $html_out .= '<li class="lm-navmenu-link" title="'.$title.'">'.anchor('#', '<span>'.ucfirst($title).'</span>');
+	                    $html_out .= '<li class="lm-navmenu-submenu lm-dropdown" title="'.$title.'">
+              <button id="first-link">'.$title.'</button>';
 	                }
 	                else
 	                {

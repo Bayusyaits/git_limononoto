@@ -21,6 +21,7 @@ class Email extends REST_data {
 	    $send_to_email = $sign_up['email'];
 	    $code = generateRandomNumeric(6);
 		$hash_activation_code = $this->password->create_bcrypt($code);
+		$invalidSignup = ['status'=>FALSE,'email'=>$send_to_email, 'message'=>'Invalid Password!!'];
 	    $subject_email = 'Please Verify Your Email';
 	    $datauser = array(
 		        'email' => $send_to_email,
@@ -28,7 +29,6 @@ class Email extends REST_data {
 				'activation_code' => $hash_activation_code,
 				'activation' => 'Success'
 		);
-	    $this->session->set_tempdata('sign_up', $datauser, 2400);
 	    $data = array(
 	     'title'=> 'Confirm Email | Limononoto Design',
 	     'subject'=> $subject_email,
@@ -40,13 +40,15 @@ class Email extends REST_data {
 		$verify_email = $this->my_email->verif_email($data,5371502);
 	    if($verify_email == true)
 	    {
+	      $this->session->set_tempdata('sign_up', $datauser, 2400);
 	      redirect("auth/confirmemail?vc=p&e-m=".$send_to_email);
 	      $this->set_response($data,Rest_data::HTTP_OK);
 	    }
 	    else
 	    {
 	      $this->session->set_tempdata('sign_up', null, 6);
-		  redirect("auth?failed");	
+		  redirect("auth?failed");
+		  $this->response($invalidSignup,Rest_data::HTTP_BAD_REQUEST);	
 	      //show_error($this->email->print_debugger());
 	    }//else_email_send
     }
@@ -79,6 +81,7 @@ class Email extends REST_data {
 	    if($twofactor == TWOFACTOR_EMAIL){
 	    $code = generateRandomNumeric(6);
 		$hash_activation_code = $this->password->create_bcrypt($code);
+		$invalidlogin = ['status'=>FALSE,'email'=>$send_to_email, 'message'=>'Invalid Password!!'];
 	    $subject_email = 'Verification code';
 	    $datauser = array(
 		        'email' => $login['email'],
@@ -89,7 +92,6 @@ class Email extends REST_data {
 				'last_login' => $login['last_login'],
 				'activation' => $login['activation']
 		);
-		$this->session->set_userdata('login', $datauser);
 	    $data = array(
 	     'title'=> 'Two-Factor Authentication | Limononoto Design',
 	     'subject'=> $subject_email,
@@ -101,6 +103,7 @@ class Email extends REST_data {
 		$verify_email = $this->my_email->verif_email($data,5371502);
 	    if($verify_email == true)
 	    {
+	      $this->session->set_userdata('login', $datauser);
 	      redirect("login/two-factor?v2=a&e-mail=".$send_to_email);
 	      $this->set_response($data,Rest_data::HTTP_OK);
 	    }
@@ -109,11 +112,14 @@ class Email extends REST_data {
 	      $this->session->unset_userdata('twofactor');
 	      $this->session->unset_userdata('login');	
 		  //redirect("auth?failed");	
+		  show_error($this->email->print_debugger());
 	      //show_error($this->email->print_debugger());
 	    }//else_email_send
 	    }else{
+	      redirect("auth?failed");	
 		  $this->session->unset_userdata('twofactor');
-	      $this->session->unset_userdata('login');	
+	      $this->session->unset_userdata('login');
+	      $this->response($invalidlogin,Rest_data::HTTP_BAD_REQUEST);	
 		  //redirect("auth?failed");	 
 	    }
     }
@@ -145,13 +151,13 @@ class Email extends REST_data {
 	    $code = generateRandomNumeric(6);
 		$hash_activation_code = $this->password->create_bcrypt($code);
 	    $subject_email = 'Reset Password';
+	    $invalidPassword = ['status'=>FALSE,'email'=>$send_to_email, 'message'=>'Invalid Password!!'];
 	    $datauser = array(
 		        'email' => $send_to_email,
 				'sent_email' => 1,
 				'activation_code' => $hash_activation_code,
 				'activation' => 'Success'
 		);
-	    $this->session->set_tempdata('password_reset', $datauser, 2400);
 	    $data = array(
 	     'title'=> 'Reset Password | Limononoto Design',
 	     'subject'=> $subject_email,
@@ -163,12 +169,16 @@ class Email extends REST_data {
 		$verify_email = $this->my_email->verif_email($data,5371502);
 	    if($verify_email == true)
 	    {
+	      $this->session->set_tempdata('password_reset', $datauser, 2400);
 	      redirect("auth/password?pr=pass&e-mail=".$send_to_email);
+	      $this->set_response($datauser,Rest_data::HTTP_OK);
+	      
 	    }
 	    else
 	    {
 	      $this->session->set_tempdata('password_reset', null, 6);
 		  redirect("passwordreset?failed");	
+		  $this->response($invalidPassword,Rest_data::HTTP_BAD_REQUEST);
 	      //show_error($this->email->print_debugger());
 	    }//else_email_send
 	   

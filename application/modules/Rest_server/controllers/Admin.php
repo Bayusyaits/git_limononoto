@@ -16,7 +16,7 @@ class Admin extends REST_data
 		$this->lang->load('auth_lang');		
 		$this->load->library(array('Authenticaion/Auth_libraries','Rest_server/auth_jwt','user_agent','form_validation','Password','Format','user_agent'));
 		$this->load->helper(array('authorization','jwt','asset'));
-		$this->load->model(array('user_model','rest_model'));
+		$this->load->model(array('user_model','rest_model','auth_model'));
 	}
 		
     public function manage_get()
@@ -54,7 +54,7 @@ class Admin extends REST_data
 	$cpassword = $this->input->post('cpassword');
 	$level = $this->input->post('level');
 	$country = $this->input->post('country');
-    $message_failed = ['status'=>FALSE,'email'=>$email,'message'=>'Invalid Credentials!!'];
+    $message_failed = ['status'=>FALSE,'email'=>$email,'message'=>$this->lang->line('err_rules')];
     $password_hash = $this->password->create_hash($cpassword);    
     //kondisi
     $plain_insert = $this->auth_model->plain_signup($email);
@@ -108,9 +108,9 @@ class Admin extends REST_data
 		}
 		if(!empty($errors)){
 			$errors['warning'] = TRUE;
-			$_data['warning'] = $this->lang->line('err_send_message'); 
+			$_data['warning'] = $this->lang->line('err_create'); 
 		}else{
-			$_data['warning'] = $this->lang->line('succes_send_message'); 
+			$_data['warning'] = $this->lang->line('succes_create'); 
 		}	
 		
 		if ($this->form_validation->run() == TRUE and empty($errors)) {
@@ -121,7 +121,9 @@ class Admin extends REST_data
 			$hash_activation_code = $this->password->create_bcrypt($activation_code);
 			$user_agent = $this->input->user_agent();
 			$ip = $this->input->ip_address();
+			$create_id = insert_id_user($level);
 			$data_user = array(
+				'id'=>encrypt_plaintext($create_id),
                 'username'=>encrypt_plaintext($firstname.''.$lastname),
                 'first_name'=>encrypt_plaintext($firstname),
                 'last_name'=>encrypt_plaintext($lastname),
@@ -153,67 +155,7 @@ class Admin extends REST_data
 	    }//else_validation
 		
     }
-    public function update_post(){
-    $this->config->load('validation_rules');
-    $config = $this->config->item('update_user');
-    $this->form_validation->set_rules($config);
-    $id = $this->input->post('id');
-    $firstname = $this->security->sanitize_filename($this->input->post('firstname'));
-	$lastname = $this->input->post('lastname');
-	$email = $this->security->xss_clean($this->input->post('email'));
-	$level = $this->input->post('level');
-    $message = ['status'=>FALSE,'message'=>'failed user_put'];
-    if ($this->form_validation->run() == TRUE and empty($errors)) {
-    $data_user = array(
-                'username'=>encrypt_plaintext($firstname.''.$lastname),
-                'first_name'=>encrypt_plaintext($firstname),
-                'last_name'=>encrypt_plaintext($lastname),
-                'email' => $this->db->escape(encrypt_email($email)),
-                'levels_id' => encrypt_plaintext($level),
-                'activation'=>encrypt_plaintext(5)
-            );
-      if ($this->rest_model->update_user($data_user,$id)) {
-        redirect('admin/manage');
-        $this->response($data_user,Rest_data::HTTP_OK);
-      }else {
-        redirect('admin/manage');
-        $this->response($message,Rest_data::HTTP_BAD_REQUEST);
-      }
-      }else{
-         redirect('admin/manage');
-	     $this->response($message,Rest_data::HTTP_BAD_REQUEST); 
-      }
-
-  }
-    public function user_delete()
-    {
-    $this->config->load('validation_rules');
-    $config = $this->config->item('update_user');
-    $this->form_validation->set_rules($config);
-    $id = $this->input->post('id');
-    $firstname = $this->security->sanitize_filename($this->input->post('firstname'));
-	$lastname = $this->input->post('lastname');
-	$email = $this->security->xss_clean($this->input->post('email'));
-	$level = $this->input->post('level');
-	$message = [
-            'id'=>$id,
-	        'activation'=>0,
-            'message' => 'Deleted the resource'
-        ];
-    if ($this->form_validation->run() == TRUE) {
-    $delete = $this->rest_model->delete_user($id);
-      if ($delete) {
-        redirect('admin/manage#d');
-        $this->response($data_user,Rest_data::HTTP_OK);
-      }else {
-        redirect('admin/manage#ds');
-        $this->response($message,Rest_data::HTTP_BAD_REQUEST);
-      }
-      }else{
-         redirect('admin/manage');
-	     $this->response($message,Rest_data::HTTP_BAD_REQUEST); 
-      }
-    }   
+       
     }
     
     

@@ -116,8 +116,8 @@ $route['api/active/(:num)']['DELETE']                = 'Rest_server/users/active
 
 $route['api/admin/manage']['POST']                    = 'Rest_server/admin/manage';
 $route['api/insert/user']['POST']                    = 'Rest_server/admin/insert';
-$route['update/user']['POST']          	   			= 'Admin/admin_ud/update';
-$route['delete/user']['POST']     				 = 'Admin/admin_ud/delete';
+$route['update/user']['POST']          	   			= 'Admin/Admin_ajax/update';
+$route['delete/user']['POST']     				 	= 'Admin/Admin_ajax/delete';
 
 //---------------------------------api buku---------------------------------------------------------
 $route['api/login']['GET']                             = 'Rest_server/Auth_token/login';

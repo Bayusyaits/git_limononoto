@@ -27,7 +27,7 @@ class Admin extends MY_Controller
 	public function index()
 	{
 		force_ssl();
-		$this->manage = $this->admin_libraries->build_manage();
+		$this->levels = $this->admin_libraries->levels_user();
 		$this->insert = $this->admin_form->form_manage();
 		$this->javascript = $this->bower->js('default');
         $this->javascript[] = $this->bower->add(js_url().'admin/lm-select-form.js');
@@ -50,7 +50,7 @@ class Admin extends MY_Controller
 		$this->render('manage', array(
             'menu_title' => $this->menu_title,
             'insert' => $this->insert,
-            'manage' => $this->manage
+            'manage' => $this->levels
         ));
 		$this->render('include/footer', array(
             'menu_footer' => $this->menu_footer,

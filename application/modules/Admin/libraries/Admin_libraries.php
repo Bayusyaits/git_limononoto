@@ -235,11 +235,69 @@ class Admin_libraries
 			return FALSE;
 	}
 	
-	function build_manage()
+	function levels_user()
+    {
+    	$ci =& get_instance();
+		$results = $this->ci->admin_model->get_object_levels('tb_lvc_users');
+        $html_out = "\t\t".'<div class="lm-feed-levels fade out" id="lm-feed-left">'."\n";
+        $html_out .= "\t\t".'<div class="lm-feed-module">'."\n";
+        if (is_array($results) || is_object($results))
+		{
+			foreach ($results as $row) {
+			$iso = decrypt_ciphertext($row->iso);
+			$id = $row->id;
+			$ui = $row->ui_id;
+			$name = decrypt_ciphertext($row->name);
+			if($id != 539101 ) {
+			if($id === 539202){
+			$html_out .= "\t\t".'<div class="lm-level-wrapper" data-level="'.$id.'">'."\n";
+			$html_out .= "\t\t".'<h5 class="lm-h5 lm-level-name">'.ucfirst($name).'</h5>'."\n";
+			
+			}else if($id === 539203){
+			$html_out .= "\t\t".'<div class="lm-level-wrapper" data-level="'.$id.'">'."\n";
+			$html_out .= "\t\t".'<h5 class="lm-h5 lm-level-name">'.ucfirst($name).'</h5>'."\n";
+			
+			}else if($id === 539304){
+			$html_out .= "\t\t".'<div class="lm-level-wrapper" data-level="'.$id.'">'."\n";
+			$html_out .= "\t\t".'<h5 class="lm-h5 lm-level-name">'.ucfirst($name).'</h5>'."\n";
+			
+			}else if($id === 539305){
+			$html_out .= "\t\t".'<div class="lm-level-wrapper" data-level="'.$id.'">'."\n";
+			$html_out .= "\t\t".'<h5 class="lm-h5 lm-level-name">'.ucfirst($name).'</h5>'."\n";
+			
+			}else if($id === 539506){
+			$html_out .= "\t\t".'<div class="lm-level-wrapper" data-level="'.$id.'">'."\n";
+			$html_out .= "\t\t".'<h5 class="lm-h5 lm-level-name">'.ucfirst($name).'</h5>'."\n";
+			
+			}else if($id === 539507){
+			$html_out .= "\t\t".'<div class="lm-level-wrapper" data-level="'.$id.'">'."\n";
+			$html_out .= "\t\t".'<h5 class="lm-h5 lm-level-name">'.ucfirst($name).'</h5>'."\n";
+			
+			}else {
+			$html_out .= "\t\t".'<div class="lm-level-wrapper" data-level="'.$id.'">'."\n";
+			$html_out .= "\t\t".'<h5 class="lm-h5 lm-level-name">'.ucfirst($name).'</h5>'."\n";
+				
+			}
+			// loop through and build all the child submenus.
+            $html_out .= $this->get_childs($id);
+                    
+			$html_out .= "\t".'</div>'."\n";
+			}
+			}
+			            
+        }else{
+	        $html_out .= '';
+        }
+        $html_out .= "\t".'</div>'."\n";
+        $html_out .= "\t".'</div>'."\n";
+
+        return $html_out;
+    }  
+	function get_childs($ref_level)
     {	
     	$results = $this->ci->admin_model->select_all_user();
     	$this->fieldset = array('class' => 'fieldset');
-        $html_out = "\t\t".'<div class="lm-feed-levels fade out">'."\n";
+        $html_out = "\t\t".'<div class="lm-manage-wrapper">'."\n";
         if (is_array($results) || is_object($results))
 		{
 			foreach ($results as $row) {
@@ -248,32 +306,43 @@ class Admin_libraries
 			$firstname = decrypt_ciphertext($row->first_name);
 			$lastname = decrypt_ciphertext($row->last_name);
 			$level = decrypt_ciphertext($row->levels_id);			
-		if($level == 539203){
-		$html_out .= "\t\t".'<div class="lm-feed-module">'."\n";
-		$html_out .= "\t\t".'<div class="lm-col lm-col-2">'."\n";
-		$html_out .= "\t\t".'<h5>Contributor</h5>'."\n";
-		$html_out .= "\t".'</div>'."\n";
-		$html_out .= "\t\t".'<div class="lm-col lm-col-2">'."\n";
-		$html_out .= form_fieldset('', $this->fieldset)."\n";
-		$html_out .= div_open('lm-manage-modal',$id,$row->id).'<div class="lm-manage-id">'.$id.'</div>'.'<div class="lm-manage-email">'.$email.'</div>'.div_close()."\n";        
-        $html_out .= form_fieldset_close()."\n";
-        $html_out .= "\t".'</div>'."\n";
-        $html_out .= "\t".'</div>'."\n";
-		}
-		if($level == 539202){	
-		$html_out .= "\t\t".'<div class="lm-feed-module">'."\n";
-		$html_out .= "\t\t".'<div class="lm-col lm-col-2">'."\n";
-		$html_out .= "\t\t".'<h5>Member</h5>'."\n";
-		$html_out .= "\t".'</div>'."\n";
-		$html_out .= "\t\t".'<div class="lm-col lm-col-2">'."\n";
-		$html_out .= form_fieldset('', $this->fieldset)."\n";
-		$html_out .= div_open('lm-manage-modal',$id,$row->id).'<div class="lm-manage-id">'.$id.'</div>'.'<div class="lm-manage-email">'.$email.'</div>'.div_close()."\n";        
-        $html_out .= form_fieldset_close()."\n";
-        $html_out .= "\t".'</div>'."\n";
-        $html_out .= "\t".'</div>'."\n";
-		}	
+			if($level == $ref_level){
+			$html_out .= form_fieldset('', $this->fieldset)."\n";
+			$html_out .= "\t".div_open('lm-manage-modal',$id,$row->id).'<a href="#" class="lm-manage-link"><div class="lm-manage-id"><h5>'.$id.'</h5></div>'.'<div class="lm-manage-email"><p>'.$email.'</p></div></a>'.div_close()."\n";        
+	        $html_out .= form_fieldset_close()."\n";
+			}
     	}
     	}
+    	$html_out .= "\t".'</div>'."\n";
+	 	return $html_out;   
+    }
+	
+    function build_childs_manage()
+    {	
+    	$results = $this->ci->admin_model->select_all_user();
+    	$this->fieldset = array('class' => 'fieldset');
+        $html_out = "\t\t".'<div class="lm-feed-levels fade out" id="lm-feed-left">'."\n";
+        $html_out .= "\t\t".'<div class="lm-feed-module">'."\n";
+        if (is_array($results) || is_object($results))
+		{
+			foreach ($results as $row) {
+			$id = decrypt_ciphertext($row->id);
+			$email = decrypt_email($row->email);
+			$firstname = decrypt_ciphertext($row->first_name);
+			$lastname = decrypt_ciphertext($row->last_name);
+			$level = decrypt_ciphertext($row->levels_id);		
+			if($level == 539202){
+			$html_out .= "\t\t".'<div class="lm-col lm-col-2">'."\n";
+			$html_out .= "\t\t".'<h5>Member</h5>'."\n";
+	        }
+	        if($level == 539203){
+			$html_out .= "\t\t".'<div class="lm-col lm-col-2">'."\n";
+			$html_out .= "\t\t".'<h5>Contributor</h5>'."\n";
+	        }
+			$html_out .= "\t".'</div>'."\n";				
+			}
+    	}
+    	$html_out .= "\t".'</div>'."\n";
     	$html_out .= "\t".'</div>'."\n";
     	
 	 	return $html_out;   

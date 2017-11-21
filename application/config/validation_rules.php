@@ -231,3 +231,21 @@ $config['update_user'] = array(
 		                  )
 		                  
 		        );
+$config['delete_user'] = array(
+		               	  array(
+		                     'field'   => 'id',
+		                     'label'   => 'Id',
+		                     'rules'   => 'trim|required|numeric'
+		                  ),
+		                  array(
+		                     'field'   => 'level',
+		                     'label'   => 'Level user',
+		                     'rules'   => 'required'
+		                  ),
+		                  array(
+		                     'field'   => 'email',
+		                     'label'   => 'Email',
+		                     'rules'   => 'trim|required|valid_email|min_length[5]'
+		                  )
+		                  
+		        );

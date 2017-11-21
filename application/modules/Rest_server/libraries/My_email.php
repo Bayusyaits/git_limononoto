@@ -42,7 +42,10 @@
 		{
 		foreach ($results as $row) {
 		$template_url = decrypt_ciphertext($row->url);
-	    $this->email->from('no-reply@limononoto.com', 'Limononoto Design');
+		$from = decrypt_ciphertext($row->from);
+		$from = ucfirst($from);
+		$email = decrypt_email($row->email);
+	    $this->email->from($email, $from);
 	    $message = $this->load->view($template_url,$data,TRUE);
 	    $this->email->message($message);
 	    $path = $this->config->item('server_root');
