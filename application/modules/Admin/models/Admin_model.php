@@ -8,6 +8,11 @@ class Admin_model extends CI_Model {
     }
 	private $table = 'tb_ui_users';
     private $_data = array();  
+     function record_count($table)
+	 {
+	  return $this->db->count_all($table);
+	 }
+    
     public function get_user_name($id)
     {
        $query = $this->db->get_where($this->table,array('id'=>$id));
@@ -26,10 +31,6 @@ class Admin_model extends CI_Model {
       return $users;
 
 	    }
-	    function record_count($table)
-	 {
-	  return $this->db->count_all($table);
-	 }	
 	  public function get_table_levels_user($levels_id)
     {
        $show = $this->admin_model->check_levels_id();
@@ -166,7 +167,7 @@ return $results;
 	    $this->_data = $row;
 	    return $this->_data;
   }
-public function plain_update_user($id){
+ public function plain_update_user($id){
   	   $query = $this->db->get($this->table);
        $users = array();
        $user = null;
@@ -191,12 +192,45 @@ public function plain_update_user($id){
         }
       return $user;
 	    }
+	    public function plain_update($id,$ref_email)
+    {
+       $count_record = $this->admin_model->record_count($this->table);
+       $this->db->where('id !=', $id);
+       $query = $this->db->limit($count_record,0)->get($this->table);
+       $users = array();
+       $user = null;
+       if ($query->num_rows() > 0)
+        {
+            foreach ($query->result() as $row)
+            {
+                $users[]            = $row->email;
+            }
+        }
+        if (!empty($users))
+        {
+            foreach ($users as $key => $value)
+            {
+            	$email = decrypt_email($ref_email);
+            	$value = decrypt_email($value);
+                if (isset($value) && $value === $email)
+                {
+                	$user = ERR_REGISTERED_EMAIL;
+                }
+            }
+        }
+      return $user;
+	    }
  public function update_user($data,$userid) {
       	extract($data);
       	$id = $this->admin_model->plain_update_user($userid);
-	    $this->db->where('id', $id);
+      	$user = $this->admin_model->plain_update($id,$data['email']);
+      	if($user == ERR_REGISTERED_EMAIL){
+	    return ERR_REGISTERED_EMAIL;	
+      	}else{
+	      		    $this->db->where('id', $id);
 	    $this->db->update($this->table, $data);
 	    return ERR_NONE;
+	    }
 	}
  public function select_user_id($id){
 	$query = $this->db->get_where($this->table,array('id'=>$id));

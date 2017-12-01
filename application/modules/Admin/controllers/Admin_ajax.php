@@ -38,15 +38,15 @@ class Admin_ajax extends MY_Controller
 		$email = $this->security->xss_clean($this->input->post('email'));
 		$level = $this->input->post('level');
 		$activation = $this->input->post('activation_user');
-		$country = $this->input->post('country');	    
+		$country = $this->input->post('country');
 	    if(empty($this->login) || !$this->login)
 			$data['session'] = $this->lang->line('err_no_session');
 			$data['redirect'] = 'auth';
-			
+		
 		if (empty($id))
 		    $data['id'] = $this->lang->line('err_id_required');
-		    
-		if (empty($email))
+				    
+		if (!filter_var($email, FILTER_VALIDATE_EMAIL))
 		    $data['email'] = $this->lang->line('err_email_required');
 		
 		if (empty($firstname))
@@ -74,8 +74,10 @@ class Admin_ajax extends MY_Controller
                 'activation'=>encrypt_plaintext($activation)
             );
             $update = $this->admin_model->update_user($data_user,$id);
-			if ($update) {
+			if ($update == ERR_NONE) {
 			$data['success'] = true;
+			$data['id'] = $id;
+			$data['name'] = ucfirst($firstname).' '.ucfirst($lastname);
 			$data['id'] = $id;
 			$data['email'] = $email;
 			$data['message'] = $this->lang->line('success_update');
@@ -111,7 +113,7 @@ class Admin_ajax extends MY_Controller
 		$data['level'] = $this->lang->line('err_level_required');
 	if ($this->form_validation->run() == TRUE) {
     $delete = $this->admin_model->delete_user($id);
-	if($delete){
+	if($delete == ERR_NONE){
 	$data['success'] = true;
 	$data['id'] = $id;
 	$data['message'] = $this->lang->line('success_delete');

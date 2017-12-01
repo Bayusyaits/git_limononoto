@@ -91,6 +91,7 @@ define('USER_ACTIVE', 5);
 define('ERR_NONE', 10);
 define('ERR_INVALID_USERNAME', 11);
 define('ERR_INVALID_EMAIL', 12);
+define('ERR_REGISTERED_EMAIL', 33);
 define('ERR_INVALID_PASSWORD', 13);
 define('ERR_INVALID_ACTIVATION', 14);
 define('ERR_INVALID_UNLISTED', 15);

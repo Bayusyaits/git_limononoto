@@ -308,7 +308,7 @@ class Admin_libraries
 			$level = decrypt_ciphertext($row->levels_id);			
 			if($level == $ref_level){
 			$html_out .= form_fieldset('', $this->fieldset)."\n";
-			$html_out .= "\t".div_open('lm-manage-modal',$id,$row->id).'<a href="#" class="lm-manage-link"><div class="lm-manage-id"><h5>'.$id.'</h5></div>'.'<div class="lm-manage-email"><p>'.$email.'</p></div></a>'.div_close()."\n";        
+			$html_out .= "\t".div_open('lm-manage-modal',$id,$row->id).'<a href="#" class="lm-manage-link"><div class="lm-manage-name"><h5>'.ucfirst($firstname).' '.ucfirst($lastname).'</h5></div>'.'<div class="lm-manage-email"><p>'.$email.'</p></div></a>'.div_close()."\n";        
 	        $html_out .= form_fieldset_close()."\n";
 			}
     	}

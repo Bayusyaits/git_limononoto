@@ -154,3 +154,6 @@
 [21-Nov-2017 21:44:28 Asia/Bangkok] PHP Fatal error:  Call to undefined method Admin_libraries::build_manage() in /home/limb8391/public_html/application/modules/Admin/controllers/Admin_ajax.php on line 77
 [21-Nov-2017 21:46:58 Asia/Bangkok] PHP Fatal error:  Call to undefined method Admin_libraries::build_manage() in /home/limb8391/public_html/application/modules/Admin/controllers/Admin_ajax.php on line 77
 [21-Nov-2017 21:50:52 Asia/Bangkok] PHP Fatal error:  Call to undefined method Admin_libraries::build_manage() in /home/limb8391/public_html/application/modules/Admin/controllers/Admin_ajax.php on line 77
+[22-Nov-2017 12:21:40 Asia/Bangkok] PHP Fatal error:  Call to a member function num_rows() on boolean in /home/limb8391/public_html/system/database/DB_driver.php on line 1222
+[22-Nov-2017 12:22:50 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143
+[22-Nov-2017 12:23:10 Asia/Bangkok] PHP Fatal error:  session_start(): Failed to initialize storage module: user (path: tb_ln_sessions) in /home/limb8391/public_html/system/libraries/Session/Session.php on line 143

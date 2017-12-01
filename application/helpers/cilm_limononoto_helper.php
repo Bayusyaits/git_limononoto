@@ -5,7 +5,7 @@ if ( ! function_exists('div_open'))
 	{
 	    $code   = '<div ';
 	    $code   .= ( $class != NULL )   ? 'class="'. $class .'" '   : '';
-	    $code   .= ( $id != NULL )      ? 'id="'. $id .'" '         : '';
+	    $code   .= ( $id != NULL )      ? 'data-user_id="'. $id .'" '         : '';
 	    $code   .= ( $ref_id != NULL )      ? 'data-user="'. $ref_id .'" '  : '';
 	    $code   .= '>';
 	    return $code;

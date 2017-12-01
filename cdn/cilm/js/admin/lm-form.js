@@ -16,6 +16,9 @@
 			data: csfrData
 			});
     $lm_form(document).ready(function(e) {
+    $lm_form(".lm-button-create").click(function(event) {
+    alert("halo");
+    });
     $lm_form(".lm-manage-modal").click(function(event) {
             event.preventDefault();
             var id = $lm_form(this).attr("data-user"),
@@ -173,12 +176,13 @@
 				 } else {
 		
 		            // ALL GOOD! just show the success message!
+		            var user_id = manage_wrapper.find('[data-user_id='+data.id+']');
 		            update = '<a  href="#" class="lm-manage-link">';
-					update += '<div class="lm-manage-id"><h5>'+data.id+'<h5></div>';
+					update += '<div class="lm-manage-name"><h5>'+data.name+'<h5></div>';
 	                update += '<div class="lm-manage-email"><p>'+data.email+'</p></div>';
 	                update += '</a>';
-	                manage_wrapper.find('#'+data.id).html(update).fadeIn(1000);
-				lm_text_danger.html('<div class="has-error lm-wrap-error"><p class="lm-form-message text-success">' + data.message + '</p></div>').fadeIn(1000);			
+	                user_id.html(update).fadeIn(100);
+				lm_text_danger.html('<div class="has-error lm-wrap-error"><p class="lm-form-message text-success">' + data.message + '</p></div>').fadeIn(100);			
 						
 		        }
                 
@@ -275,9 +279,10 @@
 		
 		            // ALL GOOD! just show the success message!
 					// ALL GOOD! just show the success message!
+					var user_id = manage_wrapper.find('[data-user_id='+data.id+']');
 					update = '';
-					manage_wrapper.find('#'+data.id+'').html(update).fadeIn(1000);
-					lm_text_danger.html('<div class="has-error lm-wrap-error"><p class="lm-form-message text-success">' + data.message + '</p></div>').fadeIn(1000);			
+					user_id.html(update).fadeIn(100);
+					lm_text_danger.html('<div class="has-error lm-wrap-error"><p class="lm-form-message text-success">' + data.message + '</p></div>').fadeIn(100);			
 						
 		        }
                 

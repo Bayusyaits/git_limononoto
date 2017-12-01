@@ -8,6 +8,9 @@ echo $this->menu_title;
 </section>
 <main class="lm-inner lm-module-container">
 <div class="lm-feed">
+<div class="lm-create-user">
+	<button class="lm-button-create" data-control-name="create.post" id="lm-create-user">Create User</button>
+</div>
    <?php echo $this->levels; ?>
 <div class="lm-datauser" id="lm-update-datauser">
 <?php echo $this->insert; ?>
